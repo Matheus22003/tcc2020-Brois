@@ -1,0 +1,324 @@
+<!-- REGISTER -->
+<!-- Modal -->
+{{#if user}}
+
+{{else}}
+<form class="text-center" style="color: #757575;" action="/" method="post">
+
+    <div class="modal fade my-4" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog " role="document">
+            <!--Content-->
+            <div class="modal-content form-elegant bg-form border border-form">
+                <!--Header-->
+                <div class="modal-header text-center">
+                    <a class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel" href="/"><img
+                            src="./images/logo/Logo-Menu.png" class="logo-form mx-auto" alt=""></a>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Body-->
+                <div class="modal-body mx-4">
+                    <!--Body-->
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="form-row">
+                        <div class="col">
+                            <!-- First name -->
+                            <div class="md-form">
+                                <input type="text" name="reg_name" id="reg_name"
+                                    pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" class="form-control"
+                                    placeholder="Nome" value="{{manterDadosUser.nome}}" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Last name -->
+                            <div class="md-form">
+                                <input type="text" value="{{manterDadosUser.sobrenome}}" name="reg_sobrenome"
+                                    id="reg_sobrenome" class="form-control"
+                                    pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" placeholder="Sobrenome"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rivals Id -->
+                    <div class="md-form mt-0">
+                        <input type="text" value="{{manterDadosUser.rivalsId}}" name="reg_rivalsId" id="reg_rivalsId"
+                            class="form-control" placeholder="Rivals ID (ID de login)" pattern="[a-z\s]+$"
+                            title="Por favor utilize letras minúsculas entre a e z e numeros" onkeyup="VerificaRivals()"
+                            required>
+                    </div>
+
+                    <!-- E-mail -->
+                    <div class="md-form mt-0">
+                        <input type="email" value="{{manterDadosUser.email}}" name="reg_email" id="reg_email"
+                            class="form-control" placeholder="E-mail" required>
+                    </div>
+
+                    {{!-- Data Nascimento --}}
+                    <div class="md-form mt-0">
+                        <input type="date" value="{{manterDadosUser.data_nascimento}}" name="reg_dataNasci"
+                            id="reg_dataNasci" required class="form-control" placeholder="" required>
+                    </div>
+
+                    <!-- Phone number -->
+                    <div class="md-form">
+                        <input type="tel" value="{{manterDadosUser.celular}}" name="reg_celular" id="reg_celular"
+                            class="form-control telefone" aria-describedby="materialRegisterFormPhoneHelpBlock"
+                            minlength="15" placeholder="Numero de Telefone">
+
+                    </div>
+
+                    <!-- Sign up button -->
+                    <a href="#" id="proxRegistro"> <button
+                            class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0 hvr-rectangle-out">Proximo</button>
+                    </a>
+                    <!-- Form -->
+                </div>
+                <!--Footer-->
+                <div class="modal-footer mx-auto pt-3 mb-1">
+                    <p class="font-small grey-text d-flex justify-content-end">Já é membro?<a href="#"
+                            id="abrirLoginFecharRegistro" class="text-rivals ml-1 hover-rivals">Entrar</a></p>
+                    {{!-- data-dismiss="modal" aria-label="Close"
+                        data-toggle="modal" data-target="#modalLogin" --}}
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Modal -->
+    <!-- FIM REGISTER -->
+
+    <!-- INFO BASIC -->
+    <!-- Modal -->
+    <div class="modal fade my-4" id="segundaParteReg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog " role="document">
+            <div class="modal-content form-elegant bg-form border border-form">
+                <!--Header-->
+                <div class="modal-header text-center">
+                    <a href="#" id="voltarCad"><img src="./images/icons/icons-reg/voltar.png" class="voltar" alt=""></a>
+                    {{!-- <a class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel" href="/"><img
+                            src="./images/logo/Logo-Menu.png" class="logo-form mx-auto" alt=""></a> --}}
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Body-->
+                <div class="modal-body mx-4">
+                    <!--Body-->
+                    <div class="md-form mb-5">
+                        <input type="text" name="reg_exibicaoTag" id="Form-email1" class="form-control validate"
+                            placeholder="GamerTag (Nome de Exibição)" value="{{manterDadosUser.exibicaoTag}}"
+                            onkeypress="">
+                    </div>
+
+                    <div class="text-center text-light">
+                        <label for="" class="text-center">Qual jogo você pretende jogar?</label>
+                    </div>
+                    <div class="row ml-auto">
+
+                        <!-- Default unchecked -->
+                        <div class="custom-control custom-checkbox col-4">
+                            <input type="checkbox" name="reg_lol" class="custom-control-input" id="reg_lol">
+                            <label class="custom-control-label" for="reg_lol"> <img
+                                    src="./images/icons/icons-modal/leagueoflegends.jpg" alt="League of Legends"
+                                    class="modal-icons my-auto pointer" title="League of legends">
+                            </label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox col-4">
+                            <input type="checkbox" name="reg_csgo" class="custom-control-input" id="reg_csgo">
+                            <label class="custom-control-label" for="reg_csgo"> <img
+                                    src="./images/icons/icons-modal/csgo.png" alt="Counter Strike: Global Offensive"
+                                    class="modal-csgo my-auto pointer" title="Counter Strike: Global Offensive">
+                            </label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox col-4">
+                            <input name="reg_valorant" type="checkbox" class="custom-control-input" id="reg_valorant">
+                            <label class="custom-control-label" for="reg_valorant"> <img
+                                    src="./images/icons/icons-modal/valorant.png" alt="Valorant"
+                                    class="modal-csgo my-auto pointer" title="Valorant"> </label>
+                        </div>
+
+                    </div>
+
+                    <!-- Password -->
+                    <div class="md-form">
+                        <input type="password" name="reg_senha" id="reg_senha" class="form-control"
+                            aria-describedby="materialRegisterFormPasswordHelpBlock"
+                            placeholder="Senha (min. 8 caracteres)" required minlength="8">
+                    </div>
+                    <!-- Password Confirm -->
+                    <div class="md-form">
+                        <input type="password" name="reg_senhaConfirma" id="reg_senhaConfirma" class="form-control"
+                            aria-describedby="materialRegisterFormPasswordHelpBlock"
+                            placeholder="Confirmar Senha (min. 8 caracteres)" minlength="8" required>
+                    </div>
+
+
+                    <div class="text-center mb-3">
+                        <button
+                            class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0 hvr-rectangle-out"
+                            type="submit">Registrar</button>
+                        <p>Ao clicar em
+                            <em>Registrar</em> você aceita os nossos
+                            <a href="" target="_blank" class="text-rivals hover-rivals">Termos e Condições de Uso</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Modal -->
+    <!-- FIM INFO BASIC -->
+</form>
+
+<!-- LOGIN -->
+<!-- Modal -->
+<div class="modal fade my-4" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog " role="document">
+        <!--Content-->
+        <div class="modal-content form-elegant bg-form border border-form">
+            <!--Header-->
+            <div class="modal-header text-center">
+                <a class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"
+                    href="./index.html"><img src="./images/logo/Logo-Menu.png" class="logo-form mx-auto" alt=""></a>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/" method="post">
+                <div class="modal-body mx-4">
+                    <!--Body-->
+                    <div class="md-form mb-5">
+                        <input type="text" name="email" id="email" class="form-control validate"
+                            placeholder="Seu RivalsID ou E-mail">
+                    </div>
+
+                    <div class="md-form pb-3">
+                        <input type="password" name="senha" id="senha" class="form-control validate"
+                            placeholder="Sua Senha">
+                        <p class="font-small text-rivals d-flex justify-content-end"><a href="#"
+                                class="text-rivals hover-rivals ml-1">
+                                Esqueceu a senha?</a></p>
+                    </div>
+
+                    <div class="text-center mb-3">
+                        <button type="submit"
+                            class="btn bg-form border border-form text-rivals btn-block btn-rounded z-depth-1a black hvr-rectangle-out">ENTRAR</button>
+                    </div>
+                </div>
+            </form>
+            <!--Body-->
+            <!--Footer-->
+            <div class="modal-footer mx-auto pt-3 mb-1">
+                <p class="font-small grey-text d-flex justify-content-end">Ainda não é membro?<a href="/"
+                        class="text-rivals ml-1 hover-rivals " id="fecharLoginAbrirRegistro">
+                        Registrar
+                    </a>
+                </p>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Modal -->
+<!-- FIM LOGIN -->
+
+{{/if}}
+
+
+<!--Main Navigation-->
+<header class="rivals-bg-home">
+
+    <nav class="navbar navbar-expand-sm navbar-dark black fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="./images/logo/Logo-Menu.png" alt="" class="logo"></a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            {{#if user}}
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <!-- NOVIDADES -->
+                    <li class="nav-item">
+                        <a class="nav-link at-border hvr-underline-from-left mr-4 " href="#" data-toggle="modal"
+                            data-target="#modalRegister">Novidades</a>
+                    </li>
+                    <!-- CAMPEONATOS -->
+                    <li class="nav-item">
+                        <a class="nav-link at-border hvr-underline-from-left mr-4" href="#">Campeonatos</a>
+                    </li>
+                    <!-- ACADEMY -->
+                    <li class="nav-item">
+                        <a class="nav-link at-border hvr-underline-from-left" href="#"> Rivals Academy</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <!-- USUARIO -->
+                    <!-- <li class="nav-item">
+              <a class="nav-link waves-effect waves-light">1
+                <i class="fas fa-envelope"></i>
+              </a>
+            </li> -->
+                    <li class="nav-item avatar dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"> {{#each user}}{{nome}}{{else}}{{/each}}
+                            "{{#each user}}{{exibicaoTag}}{{else}}{{/each}}"
+                            {{#each user}}{{sobrenome}}{{else}}{{/each}}
+                            <img src="/user_pictures/perfil_{{#each user}}{{_id}}{{else}}{{/each}}.png"
+                                class="rounded-circle ml-1 z-depth-0 perfil" alt="avatar image">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary dropdown-function"
+                            aria-labelledby="navbarDropdownMenuLink-55">
+                            <div class="wallet">
+
+                                <a class="dropdown-item mb-2" href="#"> <img src="./images/icons/icons-menu/wallet.png"
+                                        alt="" class="menu-dropdown-icon mr-2"> Carteira: <span id="dinheiro" class="money"> R$
+                                        {{#each user}}{{#each carteiras}}{{reais}}{{else}}{{/each}}{{else}}{{/each}}</span></a>
+                            </div>
+                            <a class="dropdown-item" href="#"> <img src="./images/icons/icons-menu/perfil.png" alt=""
+                                    class="menu-dropdown-icon mr-2"> Meu Perfil</a>
+                            <a class="dropdown-item" href="#"> <img src="./images/icons/icons-menu/notification.png"
+                                    alt="" class="menu-dropdown-icon mr-2"> Notificações</a>
+                            <a class="dropdown-item" href="#"> <img src="./images/icons/icons-menu/team.png" alt=""
+                                    class="menu-dropdown-icon mr-2"> Meu Time</a>
+                            <a class="dropdown-item" href="#"> <img src="./images/icons/icons-menu/configuration.png"
+                                    alt="" class="menu-dropdown-icon mr-2"> Configurações</a>
+                            <a class="dropdown-item" href="#"> <img src="./images/icons/icons-menu/support.png" alt=""
+                                    class="menu-dropdown-icon mr-2"> Suporte</a>
+                            <a class="dropdown-item" href="/logout"> <img src="./images/icons/icons-menu/logout.png"
+                                    alt="" class="menu-dropdown-icon mr-2"> Sair</a>
+                        </div>
+                </ul>
+            </div>
+
+
+            {{else}}
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <!-- REGISTRAR -->
+                    <li class="nav-item">
+                        <a class="nav-link at-border hvr-underline-from-left mr-4 " href="#" data-toggle="modal"
+                            data-target="#modalRegister">Registrar</a>
+                    </li>
+                    <!-- LOGAR -->
+                    <li class="nav-item">
+                        <a class="nav-link at-border hvr-underline-from-left" href="#" data-toggle="modal"
+                            data-target="#modalLogin">Entrar</a>
+                    </li>
+                </ul>
+            </div>
+            {{/if}}
+        </div>
+    </nav>
+
+</header>
+<!--Main Navigation-->
+

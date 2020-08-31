@@ -1,0 +1,15 @@
+{{#if success_msg }}
+{{!-- <div class="alert alert-success fixed-top mt-5">{{success_msg}}</div> --}}
+<div class="fixed-top mt-5 container fadeOut animated faster delay-5s">
+    <div class="alert alert-success mt-5 bounceInDown animated">{{success_msg}}</div>
+</div>
+
+{{/if}}
+
+{{#if error_msg}}
+<div class="fixed-top mt-5 container fadeOut animated faster delay-5s">
+    {{!-- _msg --}}
+    <div class="alert alert-danger mt-5 bounceInDown animated">{{error_msg}}</div>
+</div>
+{{/if}}
+

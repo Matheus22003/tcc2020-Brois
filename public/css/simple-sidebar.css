@@ -1,0 +1,189 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/templates/simple-sidebar)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+#wrapper {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  background: #1A1A1A;
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 1);
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+.botaoMobile {
+  visibility: visible;
+}
+
+@media (min-width: 768px) {
+  .botaoMobile {
+    visibility: hidden;
+  }
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+.hoverSideBar {
+  background: #1A1A1A;
+}
+
+.hoverSideBar:hover {
+  /* color: #fff; */
+  background: #252525;
+}
+
+.hoverSideBar:focus {
+  background: #252525;
+}
+
+#inputSearch {
+  width: 13em;
+  background: #141414;
+  border: none !important;
+  margin-left: 20px;
+  border-radius: 0 !important;
+  height: 50px;
+  border: 1px outset;
+  position: relative;
+  padding-left: 1.5em;
+}
+
+#inputSearch:focus {
+  box-shadow: none;
+}
+
+.menu-items {
+  position: relative;
+  cursor: pointer;
+
+}
+
+.menu-items:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-right: 28px solid #1A1A1A;
+  /* #1d1d1d */
+  border-top: -28px solid transparent;
+  border-bottom: 28px solid transparent;
+}
+
+.menu-items:focus::before {
+  transition: all 0.3s;
+
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-right: 32px solid #F66100;
+  border-bottom: 31px solid transparent;
+}
+
+.menu-items:hover::before {
+  transition: all 0.3s;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  /* border-right: 31px solid #F66100; */
+  /* #1d1d1d */
+  border-bottom: 31px solid transparent;
+}
+
+.menu-search {
+  position: relative;
+}
+
+.menu-search:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 45px solid #1A1A1A;
+  /* #1d1d1d */
+  border-top: -10px solid transparent;
+  border-bottom: 45px solid transparent;
+}
+
+a, a:hover {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.registrar {
+  width: 0.9em;
+}
+
+#loginRegistro a {
+  background-color: #252525;
+  border: 0;
+  /* bottom: 0 !important; */
+  /* position: relative; */
+  /* bottom: 0; */
+  /* margin: 0px auto 0px auto; */
+}
+
+#loginRegistro button {
+  background-color: #252525;
+  border: 0;
+  /* bottom: 0 !important; */
+  /* position: relative; */
+  /* bottom: 0; */
+  /* margin: 0px auto 0px auto; */
+}
+
+#loginRegistro div button:focus {
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(254, 102, 0, 1);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(254, 102, 0, 1);
+  box-shadow: 0px 0px 5px 1px rgba(254, 102, 0, 1);
+}
+
+.nav-item a {
+  width: 80%;
+  border: none !important;
+}

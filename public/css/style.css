@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fe6400;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fe6400;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #fe6400;
+}
+
+::-webkit-scrollbar-track {
+  background: #403c39;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #403c39;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #403c39;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+#proxBTN {
+  background-color: #F96200;
+}
+
+#proxBTN:hover {
+  background-color: #2e2e2e;
+}
+
+#regFinal {
+  background-color: #F96200;
+}
+
+#regFinal:hover {
+  background-color: #2e2e2e;
+}
+
+.botaoPadrao {
+  background-color: #F96200;
+}
+
+.botaoPadrao:hover {
+  background-color: #2e2e2e;
+  color: #fff;
+}
+
+.disabledModal {
+  color: #666666;
+  background-color: #2e2e2e !important;
+}
+
+.disabledModal:hover {
+  color: #666666;
+  background-color: #2e2e2e !important;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+#wrapper {
+  background: #1D1D1D !important;
+}
+
+#img-user {
+  width: 3em;
+  height: 3em;
+}
+
+.panel-white {
+  border: 1px solid #dddddd;
+}
+
+.panel-white .panel-heading {
+  color: #333;
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.panel-white .panel-footer {
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.post .post-heading {
+  height: 95px;
+  padding: 20px 15px;
+}
+
+.post .post-heading .avatar {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin-right: 15px;
+}
+
+.post .post-heading .meta .title {
+  margin-bottom: 0;
+}
+
+.post .post-heading .meta .title a {
+  color: black;
+}
+
+.post .post-heading .meta .title a:hover {
+  color: #aaaaaa;
+}
+
+.post .post-heading .meta .time {
+  margin-top: 8px;
+  color: #999;
+}
+
+.post .post-image .image {
+  width: 100%;
+  height: auto;
+}
+
+.post .post-description {
+  padding: 15px;
+}
+
+.post .post-description p {
+  font-size: 14px;
+}
+
+.post .post-description .stats {
+  margin-top: 20px;
+}
+
+.post .post-description .stats .stat-item {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.post .post-description .stats .stat-item .icon {
+  margin-right: 8px;
+}
+
+.post .post-footer {
+  border-top: 1px solid #ddd;
+  padding: 15px;
+}
+
+.post .post-footer .input-group-addon a {
+  color: #454545;
+}
+
+.post .post-footer .comments-list {
+  padding: 0;
+  margin-top: 20px;
+  list-style-type: none;
+}
+
+.post .post-footer .comments-list .comment {
+  display: block;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.post .post-footer .comments-list .comment .avatar {
+  width: 35px;
+  height: 35px;
+}
+
+.post .post-footer .comments-list .comment .comment-heading {
+  display: block;
+  width: 100%;
+}
+
+.post .post-footer .comments-list .comment .comment-heading .user {
+  font-size: 14px;
+  font-weight: bold;
+  display: inline;
+  margin-top: 0;
+  margin-right: 10px;
+}
+
+.post .post-footer .comments-list .comment .comment-heading .time {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 0;
+  display: inline;
+}
+
+.post .post-footer .comments-list .comment .comment-body {
+  margin-left: 50px;
+}
+
+.post .post-footer .comments-list .comment>.comments-list {
+  margin-left: 50px;
+}
+
+.border-title {
+  border-color: #FE6400 !important;
+  border-left: 0.20em solid;
+  margin-top: -4vh;
+}
+
+.panel {
+  border: none !important;
+  background: #252525;
+}
+
+.card {
+  background: #252525 !important;
+}
+
+.background-card {
+  background: #252525 !important;
+  list-style: none;
+  margin-top: 2.5vh;
+}
+
+.menu-icons {
+  width: 1.10em;
+}
+
+.icone-time {
+  width: 5vh;
+}
+
+.areaTime {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5vh;
+}
+
+.rec-cards {
+  margin-left: 1vh;
+}
+
+#home {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-size: 1.8vh;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.container-amigos {}
+
+.img-amigos {
+  width: 4vh;
+}
+
+.texto-amigos {
+  font-family: Rajdhani;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.8vh;
+  position: absolute;
+}
+
+#userDados {
+  position: absolute;
+  right: 0;
+  width: 15em;
+  height: 2em;
+}
+
+#conteudoUser {
+
+}
+#conteudoUser h6{
+  font-size: 2vh;
+}
+.bg-user {
+  background-color: #2f2f2f;
+}
+#imagePerfil {
+  
+  /* margin-top: 0.24em; */
+}
+#imagePerfil img{
+  height: 2.5em;
+}

@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\..\\tccJonas"
+		},
+		{
+			"path": "..\\..\\..\\..\\blogApp"
+		},
+		{
+			"path": "..\\..\\..\\..\\sockets\\devPlenoMiniCurso"
+		},
+		{
+			"path": "..\\..\\..\\..\\sockets\\devPleno"
+		},
+		{
+			"path": "..\\..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\react\\curso-react-alura"
+		},
+		{
+			"path": "..\\..\\..\\..\\webpack\\projeto-webpack"
+		}
+	],
+	"settings": {}
+}

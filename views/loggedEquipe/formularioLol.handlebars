@@ -1,0 +1,37 @@
+<div style="margin-top: 80px;">
+    <h1>LOL</h1>
+    <div>
+        <label for="topo">Topo</label>
+        <input name="topo" type="text" list="topoList">
+        <datalist name="" id="topoList">
+            <option value="{{#each user}}{{nome}}{{else}}{{/each}}"></option>
+            {{#each amigos}}
+            <option value="amigos"></option>
+            {{else}}
+            {{/each}}
+
+        </datalist>
+    </div>
+
+    <div>
+        <label for="cacador">Caçador</label>
+        <input name="cacador" type="text">
+    </div>
+
+    <div>
+        <label for="meio">Meio</label>
+        <input type="text" name="meio" id="meio">
+    </div>
+
+    <div>
+        <label for="atirador">Atirador</label>
+        <input type="text" name="atirador" id="atirador">
+    </div>
+    
+    <div>
+        <label for="suporte">Suporte</label>
+        <input type="text" name="suporte" id="suporte">
+    </div>
+
+
+</div>

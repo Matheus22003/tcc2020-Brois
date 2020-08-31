@@ -1,0 +1,312 @@
+<!-- Sidebar -->
+<div class="" id="sidebar-wrapper">
+    <div>
+        <button type="button" id="btn-fechar" class="btn botaoMobile">
+            <img src="/images/icones/icons-menu/close.svg" style="width: 2vh;" class="img-fluid" alt="">
+        </button>
+    </div>
+    <div class="sticky-top">
+        <div class="sidebar-heading" style="margin-top: -5.5vh;">
+            <a href="">
+                <img src="/images/logo-menu/pt-Logo1.png" class="img-fluid mx-auto" style="width: 9em;" alt="">
+            </a>
+        </div>
+
+        <div>
+            <div class="menu-search float-right">
+                <input type="text" class=" form-control" placeholder="Search" name="" id="inputSearch">
+            </div>
+        </div>
+
+        <div class="list-group list-group-flush pt-3">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a href="#" class="list-group-item list-group-item-action hoverSideBar text-white menu-items"> <img
+                            src="/images/menu-icons/home.png" class="menu-icons img-fluid mb-1 mr-2" alt=""> Home</a>
+                </li>
+
+                <li class="nav-item ">
+                    <!-- <a href="#" class="list-group-item list-group-item-action hoverSideBar bg-transparent text-white">Overview</a> -->
+                    <div>
+                        <div class="">
+                            <a href="#homePlay" data-toggle="collapse" aria-expanded="false"
+                                class="list-group-item list-group-item-action hoverSideBar text-white menu-items"> <img
+                                    src="/images/menu-icons/play-button.png" class="menu-icons img-fluid mb-1 mr-2"
+                                    alt=""> Play
+                                <span class="dropdown-toggle"></span> </a>
+                        </div>
+                        <ul class="collapse list-unstyled" id="homePlay">
+                            <li>
+                                <a href="#">Home 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Home 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Home 3</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="#" class="list-group-item list-group-item-action hoverSideBar text-white menu-items"> <img
+                            src="/images/menu-icons/tick.png" class="menu-icons img-fluid mb-1 mr-2" alt="">
+                        Missions</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="#" class="list-group-item list-group-item-action hoverSideBar text-white menu-items"> <img
+                            src="/images/menu-icons/cart.png" class="menu-icons img-fluid mb-1 mr-2" alt=""> Shop</a>
+                </li>
+
+
+            </ul>
+        </div>
+
+        {{#if user}}
+        {{else}}
+        <footer class="row mt-3 mb-3" id="loginRegistro">
+            <div class="mx-auto align-self-end">
+                <button name="" id="" class="btn btn-primary " role="button" data-toggle="modal"
+                    data-target="#modalRegister"><img src="./images/menu-icons/login.png" alt=""
+                        class="registrar mr-2">REGISTER</button>
+                <button name="" id="" class="btn btn-primary " role="button" data-toggle="modal"
+                    data-target="#modalLogin"> <img src="./images/menu-icons/login.png" alt=""
+                        class="registrar mr-2">LOGIN</button>
+
+            </div>
+        </footer>
+        {{/if}}
+    </div>
+
+
+
+</div>
+
+<!-- /#sidebar-wrapper -->
+
+{{#if user}}
+{{else}}
+<!-- Inicio Registro -->
+<form class="text-center " id="formReg" style="color: #757575;" action="/" method="post">
+    <div class="my-4 modal fade" id="modalRegister" aria-labelledby="myModalLabel" aria-hidden="true" tabindex="-1"
+        role="dialog">
+        <div class="modal-dialog" role="document">
+
+            <!--Content-->
+            <div id="regPtUm" style="background-color: #1A1A1A;" class="modal-content form-elegant bg-form">
+                <!--Header-->
+                <div class=" text-center">
+                    <a class="modal-title w-100 dark-grey-text font-weight-bold" id="myModalLabel" href="/"><img
+                            src="/images/logo-menu/pt-Logo1.png" class="logo-form mx-auto img-fluid"
+                            style="width: 10em;" alt=""></a>
+                    <button type="button" class="close text-white mr-3 mt-3" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Body-->
+                <div class="modal-body">
+                    {{!-- <div class="menu-search float-right">
+                        <input type="text" class=" form-control" placeholder="Search" name="" id="inputSearch">
+                    </div> --}}
+
+                    <!--Body-->
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="form-row">
+                        <div class="col">
+                            <!-- First name -->
+                            <div class="testeBg">
+                                <input type="text" style="background: #000000;border: #1A1A1A;color: #666666;"
+                                    name="reg_name" id="reg_name" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"
+                                    class="form-control" placeholder="Nome" value="{{manterDadosUser.nome}}" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Last name -->
+                            <div class="">
+                                <input type="text" style="background: #000000;border: #1A1A1A;color: #666666;"
+                                    value="{{manterDadosUser.sobrenome}}" name="reg_sobrenome" id="reg_sobrenome"
+                                    class="form-control" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"
+                                    placeholder="Sobrenome" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rivals Id -->
+                    <div class="md-form mt-3">
+                        <input type="text" style="background: #000000;border: #1A1A1A;color: #666666;"
+                            value="{{manterDadosUser.rivalsId}}" name="reg_rivalsId" id="reg_rivalsId"
+                            class="form-control bg-input" placeholder="Rivals ID (apenas letras minúsculas e numeros)"
+                            title="Por favor utilize letras minúsculas entre a e z e numeros" required>
+                    </div>
+
+                    <!-- E-mail -->
+                    <div class="md-form mt-3">
+                        <input type="email" style="background: #000000;border: #1A1A1A;color: #666666;"
+                            value="{{manterDadosUser.email}}" name="reg_email" id="reg_email" class="form-control"
+                            placeholder="E-mail" required>
+                    </div>
+
+                    <div class="md-form mt-3">
+                        <input type="date" style="background: #000000;border: #1A1A1A;color: #666666;"
+                            value="{{manterDadosUser.data_nascimento}}" name="reg_dataNasci" id="reg_dataNasci" required
+                            class="form-control" placeholder="" required>
+                    </div>
+
+                    <!-- Phone number -->
+                    <div class="md-form mt-3">
+                        <input type="tel" style="background: #000000;border: #1A1A1A;color: #666666;"
+                            value="{{manterDadosUser.celular}}" name="reg_celular" id="reg_celular"
+                            class="form-control telefone" aria-describedby="materialRegisterFormPhoneHelpBlock"
+                            minlength="15" placeholder="Numero de Telefone">
+
+                    </div>
+
+                    <!-- Sign up button -->
+                    <a href="#" class="" id="proxRegistro" disabled="disabled"> <button disabled="disabled" id="proxBTN"
+                            class="disabledModal btn btn-block mt-3 hvr-fade">Proximo</button>
+                    </a>
+                    <!-- Form -->
+                </div>
+                <!--Footer-->
+                <div class="modal-footer mx-auto pt-3 mb-1">
+                    <p class="font-small grey-text d-flex justify-content-end">Já é membro?<a href="#"
+                            id="abrirLoginFecharRegistro" class="text-rivals ml-1 hover-rivals text-primary">Entrar</a>
+                    </p>
+
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Modal -->
+    <!-- FIM REGISTER -->
+
+    <!-- INFO BASIC -->
+    <!-- Modal -->
+    <div class="modal fade my-4" id="segundaParteReg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+
+
+        <div class="modal-dialog " role="document">
+            <div style="background-color: #1A1A1A;" class="modal-content form-elegant bg-form">
+                <!--Header-->
+                <div class=" text-center">
+                    <a class="modal-title w-100 dark-grey-text font-weight-bold" id="myModalLabel" href="/"><img
+                            src="/images/logo-menu/pt-Logo1.png" class="logo-form mx-auto img-fluid"
+                            style="width: 10em;" alt=""></a>
+                    <button type="button" class="close text-white mr-3 mt-3" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Body-->
+                <div class="modal-body mx-4">
+                    <!--Body-->
+                    <div class="md-form mb-5">
+                        <input type="text" name="reg_exibicaoTag" id="Form-email1" class="form-control validate"
+                            style="background: #000000;border: #1A1A1A;color: #666666;"
+                            placeholder="GamerTag (Nome de Exibição)" value="{{manterDadosUser.exibicaoTag}}"
+                            onkeypress="">
+                    </div>
+
+                    <div class="text-center text-light">
+                        <label for="" class="text-center">Qual jogo você pretende jogar?</label>
+                    </div>
+                    <div class="row ml-auto">
+
+                        <!-- Default unchecked -->
+                        <div class="custom-control custom-checkbox col-4">
+                            <input type="checkbox" name="reg_lol" class="custom-control-input" id="reg_lol">
+                            <label class="custom-control-label" for="reg_lol"> <img
+                                    src="/images/icones/icons-modal/leagueoflegends.jpg" alt="League of Legends"
+                                    class="modal-icons my-auto pointer img-fluid" title="League of legends">
+                            </label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox col-4">
+                            <input type="checkbox" name="reg_csgo" class="custom-control-input" id="reg_csgo">
+                            <label class="custom-control-label" for="reg_csgo"> <img
+                                    src="/images/icones/icons-modal/csgo.png" alt="Counter Strike: Global Offensive"
+                                    class="modal-csgo my-auto pointer img-fluid"
+                                    title="Counter Strike: Global Offensive">
+                            </label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox col-4">
+                            <input name="reg_valorant" type="checkbox" class="custom-control-input" id="reg_valorant">
+                            <label class="custom-control-label" for="reg_valorant"> <img
+                                    src="/images/icones/icons-modal/valorant.png" alt="Valorant"
+                                    class="modal-csgo my-auto pointer img-fluid" title="Valorant"> </label>
+                        </div>
+
+                    </div>
+
+                    <!-- Password -->
+                    <div class="md-form mt-3">
+                        <input type="password" style="background: #000000;border: #1A1A1A;color: #666666;"
+                            name="reg_senha" id="reg_senha" class="form-control"
+                            aria-describedby="materialRegisterFormPasswordHelpBlock"
+                            placeholder="Senha (min. 8 caracteres)" required minlength="8">
+                    </div>
+                    <!-- Password Confirm -->
+                    <div class="md-form mt-3">
+                        <input type="password" style="background: #000000;border: #1A1A1A;color: #666666;"
+                            name="reg_senhaConfirma" id="reg_senhaConfirma" class="form-control"
+                            aria-describedby="materialRegisterFormPasswordHelpBlock"
+                            placeholder="Confirmar Senha (min. 8 caracteres)" minlength="8" required>
+                    </div>
+
+
+                    <div class="text-center mb-3">
+                        {{!-- <a href="#" class="" id="proxRegistro" disabled="disabled"> <button disabled="disabled" id="proxBTN"
+                            style="" class="disabledModal btn btn-block mt-3 hvr-fade">Proximo</button>
+                    </a> --}}
+                        <button id="regFinal" disabled="disabled"
+                            class="disabledModal disabled btn btn-block mt-3 hvr-fade" type="submit">Registrar</button>
+                        <p>Ao clicar em
+                            <em>Registrar</em> você aceita os nossos
+                            <a href="" target="_blank" class="text-rivals hover-rivals">Termos e Condições de Uso</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- Fim Registro -->
+
+{{!-- Inicio Login --}}
+<form class="text-center " action="/" method="POST">
+    <div class="my-4 modal fade" id="modalLogin" aria-labelledby="modalLogin" aria-hidden="true" tabindex="-1"
+        role="dialog">
+        <div class="modal-dialog" role="document">
+            <div id="regPtUm" style="background-color: #1A1A1A;" class="modal-content form-elegant bg-form">
+                <div class=" text-center">
+                    <a class="modal-title w-100 dark-grey-text font-weight-bold" id="myModalLabel" href="/"><img
+                            src="/images/logo-menu/pt-Logo1.png" class="logo-form mx-auto img-fluid"
+                            style="width: 10em;" alt=""></a>
+                    <button type="button" class="close text-white mr-3 mt-3" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" style="background: #000000;border: #1A1A1A;color: #666666;" name="email"
+                        id="email" class="form-control mb-4" placeholder="E-mail ou Rivals ID">
+
+                    <input type="password" style="background: #000000;border: #1A1A1A;color: #666666;" name="senha"
+                        id="senha" class="form-control" placeholder="Password">
+
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <a href="" style="color: #666666;" class="text-link ">Esqueceu sua senha?</a>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-login btn-block my-4 botaoPadrao" type="submit">Entrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+{{!-- Fim Login --}}
+{{/if}}

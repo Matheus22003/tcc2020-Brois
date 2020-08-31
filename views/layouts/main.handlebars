@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Rivals - Torne-se uma Lenda.</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/hover/hover.css">
+
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+
+    <link rel="shortcut icon" href="/images/icons/rivals_icon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="d-flex" id="wrapper">
+        {{#if error}}
+        <div class="fixed-top mt-5 container fadeOut animated faster delay-5s">
+            <div class="alert alert-danger mt-5 bounceInDown animated " role="alert">{{error}}</div>
+        </div>
+        {{else}}
+        {{/if}}
+        {{>_msg}}
+        {{>_navbar}}
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg bg-transparent " style="padding-top: -1vh;">
+                <button class="btn btn-primary botaoMobile  ml-auto" id="menu-sand"><span
+                        class="navbar-toggler-icon"></span></button>
+                {{>_userDados}}
+            </nav>
+            <div id="pageTest">
+                {{{body}}}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {{!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script> --}}
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    {{!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> --}}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        socket.on('connect', function () {
+            console.log("Connected with id: " + socket.id + "<br>");
+        })
+    </script>
+    {{#if user}}
+    <script src="/js/dotToComma.js"></script>
+    {{else}}
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+
+
+    <script>
+        //Enviar dados ao servidor
+        $('#formReg').on("keyup touchstart", function (e) {
+            var rivalsid = $('#reg_rivalsId').val();
+        })
+
+    </script>
+
+    <script src="/js/mascarasInput.js"></script>
+    <script src="/js/liberarModelRegDois.js"></script>
+    <script src="/js/modalsResolve.js"></script>
+    {{/if}}
+
+
+    <script type="text/javascript">
+        //max-width:411px
+        var width = $(document).width();
+        //console.log($(document).width())
+        if (width <= 797) {
+            $('#friendList').remove()
+            $("#menu-sand").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+
+            $("#btn-fechar").click(function (e) {
+                console.log('foi')
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+
+        }
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

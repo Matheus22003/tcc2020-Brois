@@ -1,0 +1,12 @@
+<div id="userDados" class="d-flex flex-row">
+    {{!-- Icone --}}
+    <div class="pt-auto" id="imagePerfil">
+        <img src="/user_pictures/perfil_{{#each user}}{{_id}}{{#each user}}{{_id}}{{else}}{{/each}}{{else}}{{/each}}.png"
+            class="rounded-circle" alt="">
+    </div>
+    <div class="bg-user" id="conteudoUser">
+        <h6 class="text-light">{{#each user}}{{rivalsId}}{{else}}{{/each}}</h6>
+        <h6></h6>
+
+    </div>
+</div>
