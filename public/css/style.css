@@ -278,11 +278,11 @@
   position: absolute;
   right: 0;
   width: 15em;
-  height: 2em;
+  height: 3em;
 }
 
 #conteudoUser {
-
+  padding-left: 3.5vh;
 }
 #conteudoUser h6{
   font-size: 2vh;
@@ -295,5 +295,6 @@
   /* margin-top: 0.24em; */
 }
 #imagePerfil img{
-  height: 2.5em;
+  height: 3em;
+  position: relative;
 }
