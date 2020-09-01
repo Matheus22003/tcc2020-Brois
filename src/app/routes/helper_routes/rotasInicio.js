@@ -17,13 +17,6 @@ const rotaGet = (req, res) => {
         const user = res.locals.user
         const userId = user._id
         retornaJson.amigosAtivador(userId);
-        listaAmigos.novo({
-            id_user: "5f2c27e96f80143d48a175cd",
-            id_amigo: "5f35624c9669174a68e691fd",
-            is_confirmed: false,
-            is_blocked: false,
-            is_favorite: false
-        })
         setTimeout(() => {
             listAmig = retornaJson.listaAmigos
             res.render("user_general/index", { listaAmigos: listAmig })
