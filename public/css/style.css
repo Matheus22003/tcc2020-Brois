@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 ::-webkit-scrollbar {
   width: 2px;
   height: 2px;
@@ -278,23 +279,74 @@
   position: absolute;
   right: 0;
   width: 15em;
-  height: 3em;
+  height: 2em;
 }
 
 #conteudoUser {
   padding-left: 3.5vh;
 }
-#conteudoUser h6{
+
+#conteudoUser h6 {
   font-size: 2vh;
 }
+
 .bg-user {
   background-color: #2f2f2f;
 }
+
 #imagePerfil {
-  
   /* margin-top: 0.24em; */
 }
-#imagePerfil img{
-  height: 3em;
+
+#imagePerfil img {
+  height: 2.9em;
   position: relative;
+}
+
+#espacamentoUser {
+  color: #2f2f2f;
+  width: 2em;
+}
+
+.font-play {
+  font-family: 'Play', sans-serif;
+}
+
+.cinza {
+  color: #666666;
+}
+
+.lvl {
+  color: #FF3737;
+  /* padding: 8px; */
+  font-style: normal;
+  font-weight: bold;
+  line-height: 18px;
+  border-radius: 80%;
+  border: 2px solid #FF3737;
+  box-sizing: border-box;
+  /* margin-top: 4.5px; */
+}
+
+#dinheiro {
+  color: #FE6400 !important;
+}
+
+#level {
+  padding-top: 1.3vh;
+  padding-left: 1.6vh;
+}
+
+#assinatura {
+  padding-top: 1vh;
+  padding-left: 1.6vh;
+}
+
+#separador h2 {
+  font-weight: 100;
+}
+
+.posicao-icon-user {
+  padding-top: 1vh;
+  /* padding-left: 0.7vh; */
 }

@@ -1,12 +1,54 @@
-<div id="userDados" class="d-flex flex-row ">
-    {{!-- Icone --}}
+{{!-- <div id="userDados" class="d-flex flex-row ">
     <div class=" bg-transparent mr-n3" id="imagePerfil">
+        
+    </div>
+    <div class="bg-user text-light" id="conteudoUser">
+        <h6 class="text-light"></h6>
+        <h6>R$ 600,00</h6>
+
+    </div>
+</div> --}}
+
+{{!-- <div class="container">
+        <h1 class="display-4">Fluid jumbotron</h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div> --}}
+<div style="right: 0;" class="jumbotron-fluid d-flex flex-row position-absolute mt-2">
+    <div class="bg-transparent my-auto mr-n4" id="imagePerfil">
         <img src="/user_pictures/perfil_{{#each user}}{{_id}}{{#each user}}{{_id}}{{else}}{{/each}}{{else}}{{/each}}.png"
             class="rounded-circle" alt="">
     </div>
-    <div class="bg-user text-light" id="conteudoUser">
-        <h6 class="text-light">{{#each user}}{{rivalsId}}{{else}}{{/each}}</h6>
-        <h6>R$ 600,00</h6>
-
+    {{!-- Gambiarra --}}
+    <div class="bg-user" id="espacamentoUser"></div>
+    {{!-- Dados --}}
+    <div class="bg-user">
+        <h6 class="text-light font-play pt-1">{{#each user}}{{nome}}{{else}}{{/each}}</h6>
+        <h6 class="text-light font-play mt-n2 cor-secundaria-site" id="dinheiro">R$
+            {{#each user}}{{#each carteiras}}{{reais}}{{else}}{{/each}}{{else}}{{/each}},00
+        </h6>
+    </div>
+    {{!-- Level --}}
+    <div class="bg-user" id="level">
+        <h6 class="lvl p-1">30</h6>
+    </div>
+    {{!-- Assinatura --}}
+    <div class="bg-user pl-3" id="assinatura">
+        <img class="" src="/images/icones-usuario/ranking.svg" alt="">
+    </div>
+    {{!-- divisão --}}
+    <div class="bg-user pl-2" id="separador">
+        <h2 class="cinza"> | </h2>
+    </div>
+    {{!-- XININHOO --}}
+    <div class="bg-user posicao-icon-user">
+        <a href="">
+            <img class="" src="/images/icones-usuario/sino.svg" alt="">
+        </a>
+    </div>
+    {{!-- TREE DOOTS --}}
+    <div class="bg-user posicao-icon-user px-2 pt-2">
+        <a href="" class="pt-1">
+            <img class="" src="/images/icones-usuario/3dots.svg" alt="">
+        </a>
     </div>
 </div>
