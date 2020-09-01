@@ -11,13 +11,7 @@ function listaAmigos(userId) {
     while (nomeAmigos.length) {
         nomeAmigos.pop();
     }
-    listaAmigos.novo({
-        id_user: "5f2c27e96f80143d48a175cd",
-        id_amigo: "5f35624c9669174a68e691fd",
-        is_confirmed: false,
-        is_blocked: false,
-        is_favorite: false
-    })
+    
     listaAmigosDao.mostrarQuando({ id_user: `${userId}` }).lean()
         .then((doc) => {
 
