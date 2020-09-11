@@ -350,3 +350,7 @@
   padding-top: 1vh;
   /* padding-left: 0.7vh; */
 }
+
+.ui-autocomplete {
+  z-index: 1050;
+}

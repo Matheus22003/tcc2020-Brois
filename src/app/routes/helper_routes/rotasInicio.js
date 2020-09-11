@@ -24,10 +24,13 @@ const rotaGet = (req, res) => {
         const userId = user._id
         retornaJson.amigosAtivador(userId);
         setTimeout(() => {
+            listAmig = {}
             listAmig = retornaJson.listaAmigos
             res.render("user_general/index", { listaAmigos: listAmig })
-            listAmig = {};
+            // listAmig = null;
         }, 300)
+        // listAmig = null;
+
     }
     else {
         res.render("user_general/index");

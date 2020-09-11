@@ -19,6 +19,9 @@ class UserDao {
                 return err
             });
     }
+    achar(valorParaAchar) {
+        return User.find(valorParaAchar).lean().populate('carteiras')
+    }
 
     novo(valorDoNovoUsuario) {
         return new User(valorDoNovoUsuario).save()

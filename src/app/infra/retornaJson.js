@@ -4,10 +4,9 @@ const userDao = new UserDao();
 const listaAmigosDao = new ListaAmigosDao();
 var amigos = [];
 var nomeAmigos = [];
-
+var listaDeAmigosFull = [];
 
 function listaAmigos(userId) {
-
     while (nomeAmigos.length) {
         nomeAmigos.pop();
     }
@@ -61,9 +60,6 @@ function listaAmigos(userId) {
 
                                     return nomeAmigos;
 
-
-
-
                                 }
                             }).catch(err => { return console.log(err); })
                         }).catch(err => { return console.log(err); })
@@ -72,6 +68,9 @@ function listaAmigos(userId) {
                 .catch()
         }).catch();
 }
+
+
+
 
 module.exports = {
     amigosAtivador: listaAmigos,

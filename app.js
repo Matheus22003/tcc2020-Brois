@@ -4,6 +4,8 @@ const email = require('./src/app/routes/email'); // Rota de E-Mail
 const equipe = require('./src/app/routes/equipe') // Rota de Equipe
 const tournament = require('./src/app/routes/tournament') // Rota de Torneio
 const verificarDisponivel = require('./src/app/scripts/verificarIdDisponivel') //Verificar disponibilidade de email em tempo real
+const listarAmigos = require('./src/app/scripts/listarUsuariosParaAmigos'); // listarUsuariosParaAdd
+const addAmigos = require('./src/app/scripts/addAmigo');
 
 //Rotas
     // Rota Raiz

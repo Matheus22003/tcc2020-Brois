@@ -23,6 +23,7 @@ io.on('connection', (socket) => {
     })
 
 })
+io.close()
 
 
 

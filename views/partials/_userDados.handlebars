@@ -13,6 +13,9 @@
         <h1 class="display-4">Fluid jumbotron</h1>
         <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
     </div> --}}
+
+{{#if user}}
+
 <div style="right: 0;" class="jumbotron-fluid d-flex flex-row position-absolute mt-2">
     <div class="bg-transparent my-auto mr-n4" id="imagePerfil">
         <img src="/user_pictures/perfil_{{#each user}}{{_id}}{{#each user}}{{_id}}{{else}}{{/each}}{{else}}{{/each}}.png"
@@ -52,3 +55,6 @@
         </a>
     </div>
 </div>
+
+{{else}}
+{{/if}}
