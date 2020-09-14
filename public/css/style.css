@@ -354,3 +354,23 @@
 .ui-autocomplete {
   z-index: 1050;
 }
+.bg-252525{background-color: #252525;}
+#teamCreate{
+border: #EA5C00 solid 1px;
+
+}
+.times{
+
+}
+
+.box{
+width: 100%;
+display: flex;
+direction: rtl;
+justify-content: flex-start;
+}
+.btn_time{
+  border: #EA5C00 solid 1px;
+  border-radius: 10px;
+   
+}

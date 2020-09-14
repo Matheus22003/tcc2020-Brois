@@ -6,7 +6,7 @@ const ListaAmigosDao = require('../infra/listaAmigos-dao');
 //Escolher Jogo
 router.route('/')
     .get((req, res) => {
-        res.render('loggedEquipe/index')
+        res.render('play/teams/index')
     })
 
 
