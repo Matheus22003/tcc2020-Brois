@@ -40,5 +40,5 @@ const port = process.env.PORT || 8080;
 //     socket.emit('teste',"Alguma msg qualquer: Olá")
 // })
 server.listen(port, () =>{
-    console.log("Servidor rodando no endereco local: http://192.168.0.8:8080");
+    console.log(`Servidor rodando no endereco local: http://localhost:${port}`);
 })

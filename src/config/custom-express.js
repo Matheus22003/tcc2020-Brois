@@ -17,11 +17,10 @@ const cookieParser = require('cookie-parser');
 const {eLogado} = require("../helpers/eLogado")
 
 
-
 // Sessão
 var mongoStore = new MongoStore({url: "mongodb+srv://admin:admin@cluster0-z85sx.gcp.mongodb.net/rivals?retryWrites=true&w=majority"})
 app.use(session({
-    secret: '220303mat',
+    secret: "220303mat",
     genid: function(req) {
         return uuid()
     },
