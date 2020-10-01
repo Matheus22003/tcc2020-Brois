@@ -4,7 +4,7 @@ const copiarArquivo = require('../../scripts/copiarArquivo');// Copiar Arquivo
 const UserDao = require('../../infra/user-dao')
 const CarteiraDao = require('../../infra/carteira-dao')
 const ListaAmigosDao = require('../../infra/listaAmigos-dao');
-const retornaJson = require('../../infra/retornaJson')
+const EquipeDao = require("../../infra/equipe-dao");
 const bcrypt = require('bcryptjs');
 const { path, passport, io } = require('../../../config/custom-express');
 
@@ -17,19 +17,19 @@ const { path, passport, io } = require('../../../config/custom-express');
 //     is_blocked: false,
 //     is_favorite: false
 // })
-const rotaGet = (req, res) => {
+const rotaGet = async (req, res) => {
+
     if (res.locals.user) {
-        let listAmig = {};
         const user = res.locals.user
         const userId = user._id
-        retornaJson.amigosAtivador(userId);
-        setTimeout(() => {
-            listAmig = {}
-            listAmig = retornaJson.listaAmigos
-            res.render("user_general/index", { listaAmigos: listAmig })
-            // listAmig = null;
-        }, 300)
-        // listAmig = null;
+        const amigosDao = new ListaAmigosDao();
+        var listAmig = await amigosDao.mostrarQuando(userId);
+
+        listAmig = JSON.stringify(listAmig);
+        listAmig = JSON.parse(listAmig);
+        res.render("user_general/index", { listaAmigos: listAmig })
+
+
 
     }
     else {

@@ -22,7 +22,7 @@ const EquipeTeam = new Schema({
     id_Dono: {
         type: String
     },
-    id_Capitão: {
+    id_Capitao: {
         type: String
     }
 })

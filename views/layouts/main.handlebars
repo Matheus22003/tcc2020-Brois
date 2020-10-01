@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -29,13 +29,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="css/hover/hover.css">
+    <link rel="stylesheet" href="/css/hover/hover.css">
 
-    <link rel="stylesheet" href="css/simple-sidebar.css">
+    <link rel="stylesheet" href="/css/simple-sidebar.css">
 
     <link rel="shortcut icon" href="/images/icons/rivals_icon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/cursor.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/cursor.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style_equipe.css">
 </head>
 
 <body>
@@ -86,21 +87,7 @@
 
     {{#if user}}
     <script src="/js/dotToComma.js"></script>
-    <script>
-        const toDataURL = url => fetch(url)
-            .then(response => response.blob())
-            .then(blob => new Promise((resolve, reject) => {
-                const reader = new FileReader()
-                reader.onloadend = () => resolve(reader.result)
-                reader.onerror = reject
-                reader.readAsDataURL(blob)
-            }))
-        toDataURL("/images/logo-menu/pt-Logo1.png").then(dataUrl => {
-            console.log(dataUrl);
-        });
 
-
-    </script>
 
     {{else}}
 

@@ -1,0 +1,27 @@
+const admin = require('firebase-admin');
+// const firebase = require('firebase-admin');
+
+var serviceAccount = {
+    "type": "service_account",
+    "project_id": "tccapi-696d9",
+    "private_key_id": "a8a2bb4e4e7c8679ce49fce9e2c410e4aa0faa07",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDNefisndZGvYrN\ne6wcbCLDW8EPzlDqdMi0uMpxf6LN8YyYeyGT/YB1B9yhJFcVeQeTIoTYpBYz3382\nZPPbbAsEOslwTLpPCQDTp8SyPEbehTnfZ8o3KNeWu4CSG6AoMeQq4YPV+ZN+7yRZ\nb4hmkUD8ZDP91o95Wfo54JzIJJzttBdxI93QB2sV7Vl01EIyD6QbjQ5WtuUmMEtI\n5w41RktQ9lIFHL1taRdxWcrhu70BYTSp7WE3quOHNHSOSsbzWKrHe6hgBUog90Yq\nC5l1GzQeSUM8k1khr5FTIX5NbcE9CGVLcigkar7GQtdX3bXsIn2Rigv9C2vQwOzX\nugJ8wezvAgMBAAECggEAVd5vKdQcRBvZ8d2JI6edL38cw3o5HoIHjl7bW2s3olEb\nrG1oruv1zvKmJUGGkxatL7PxSIfqL2trQlQWBNC2GeJnZGLsSTM+ATXPYZ0HEN8k\nPFSnkT2kOv3I0UZyO9n9vF3aNoXCOf2+dxHBMvvo6JEHmUEdXF1Z0O4pFwsV+c/V\nbPX4TXfF2J5DfWltk8bu4x1Pyhd9gld8wz0v7rofJq3oKKUJdZIUvNx9NXkQJzIX\nOf61bJVvW+3HJNlJri/XML0ypPHn27HGR45TUgap16d/wiHeVyskm7lsPa1t60+A\nFN9pPL1VsKPIbdc+HeSSoCvXFINzHDQYXAKO0BotoQKBgQDquGZQdbikFaeIO2f6\noPcrOCLLffuA3Rr+CZhyjNWnvRWMSYzDPaAU3ojqrxE0+6b4OlBHa0HiKpPlLoaI\noaq8S5X+ZBcJrVK5havfHdLn6Ir3qWjBUbE46F/L7htjDhkWEbV6OI2fUnL2X4NF\nKR7YgIcfEGVEgClRMQGZx6oH/QKBgQDgGtqXYNAJSZc/rGJrHLMy6kFeQhABhmQp\nqkuMxzEPjG2Dmw99gjGtOaHvBdpyyIBV+LyzGTeT/MCJN8G2+iNuYpTV5U4u+e1w\nU5JJr4nXWUmSyPQTcm7stgA/j2zhVfSMsGA8JXSi5HNB1DOYFYF9dwWf3PWlNKII\nwBR4iQpOWwKBgE7KDVYu3gb+WdlKD7I6vB1e35ctN/JexgPGVs0E52dB+my3969G\nDWlT9ePJVl5Rpw+mC3Kd12TC5BhHUNOmaPiB6tyU3oLaEm3CKBpiGXzNO3C9BjP2\nZyXyIs4CpGDQx6z3ztIzD58Ofxaiox7hGcCVDEZqK4Qd/UCK0b28HyBFAoGBAKEi\nbd2+XJbw9PFxb2p4vlhzmwC9G2kdSlOzAJN+fcYiQHQKP/8MZ8+XytlkKgeyJqSq\nLnPQQ+gCKiX/kyePf35VH5MURzz7sz+6t0qIDuJqbr4+A1EgTKWiz1bkN3NmLGok\nP22/uLeO71h7zYUioXKm68JgS7e3unH0OkPYtTJVAoGAHJ6bUQ+d3u1Nk6SyGHi0\nqNqOVbhiJ912aZWLEz9zur+BcdEsiEck4uR3uEz78qE2bbSeojTzDZZVxMzMZ6ll\nZmra6TpcYrMjOwprEpaw9f9WpdRZyMixW7PMlXU8u76VQXwGxRkk1QnExAlzGtHH\nHEeI5c0a1r7sgoXC2tzOksE=\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-44jad@tccapi-696d9.iam.gserviceaccount.com",
+    "client_id": "108301762048389888085",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-44jad%40tccapi-696d9.iam.gserviceaccount.com"
+}
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    storageBucket: 'tccapi-696d9.appspot.com'
+});
+var storage = admin.storage().bucket();
+
+async function teste() {
+    
+}
+
+teste()

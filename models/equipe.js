@@ -18,8 +18,13 @@ const Equipe = new Schema({
         type: String,
         required: true
     },
-    id_team:{
-        type:mongoose.Schema.Types.ObjectId
+    id_team: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "equipeTeam"
+    },
+    countryTeam: {
+        type: String,
+        required: true
     }
 
 });
