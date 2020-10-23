@@ -14,14 +14,14 @@ const server = require('http').createServer(app)
 const io = require('socket.io')(server)
 const passportSocketIo = require('passport.socketio');
 const cookieParser = require('cookie-parser');
-const {eLogado} = require("../helpers/eLogado")
+const { eLogado } = require("../helpers/eLogado")
 
 
 // Sessão
-var mongoStore = new MongoStore({url: "mongodb+srv://admin:admin@cluster0-z85sx.gcp.mongodb.net/rivals?retryWrites=true&w=majority"})
+var mongoStore = new MongoStore({ url: "mongodb+srv://admin:admin@cluster0-z85sx.gcp.mongodb.net/rivals?retryWrites=true&w=majority" })
 app.use(session({
     secret: "220303mat",
-    genid: function(req) {
+    genid: function (req) {
         return uuid()
     },
     store: mongoStore,
@@ -36,8 +36,10 @@ app.use(flash());
 
 
 // Body Parser
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '10mb', extended: true }))
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 
 app.use(methodOverride(function (req, res) {
     if (req.body && typeof req.body === 'object' && '_method' in req.body) {
@@ -51,7 +53,7 @@ app.use(methodOverride(function (req, res) {
 // Middleware
 
 app.use((req, res, next) => {
-    
+
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash("error_msg");
     res.locals.error = req.flash("error");
@@ -80,9 +82,9 @@ app.use(express.static(path.join(__dirname, "../../public")));
 
 module.exports = {
     app: app,
-    passport:passport,
-    path:path,
-    eLogado:eLogado,
+    passport: passport,
+    path: path,
+    eLogado: eLogado,
     express: express,
     io: io,
     server: server

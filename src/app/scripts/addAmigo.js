@@ -8,10 +8,20 @@ io.on('connection', (socket) => {
     socket.on("addAmigoAtivado", (ativador) => {
         if (ativador == true) {
             socket.on("addAmigo", (res) => {
-                let id = res.rivalsId
-                let idAmigo = res.rivalsIdRivalsAmgio
-                userDao.acharUm({ rivalsId: id }).then((user) => {
+                let id = `${res.rivalsId}`;
+                let juntar=[];
 
+                for (let index = 0; index < 24; index++) {
+                    const element = id[index];
+                    // juntar.concat(element)
+                    // console.log(element);
+                    juntar[index] = element
+                }
+                juntar = juntar.toString().replace(/\,/g,'')
+                id = juntar
+                console.log(id);
+                let idAmigo = res.rivalsIdRivalsAmgio
+                userDao.acharPorId(id).then((user) => {
                     userDao.acharUm({ rivalsId: idAmigo }).then(amigo => {
 
                         listaAmigos.novo({
@@ -23,11 +33,11 @@ io.on('connection', (socket) => {
                         })
 
                     }).catch(err => {
-
+                        console.log(err);
                     })
 
                 }).catch(err => {
-
+                    console.log(err);
                 })
             })
         } else {

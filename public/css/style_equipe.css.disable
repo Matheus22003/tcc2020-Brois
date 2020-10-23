@@ -1,0 +1,14 @@
+.banner-equipe {
+    width: 100% !important;
+    height: 30vh !important;
+}
+
+.shadow-under {
+    -webkit-box-shadow: 0px 5px 15px -5px #000000 !important;
+    box-shadow: 0px 5px 15px -5px #000000 !important;
+}
+
+/* .mobileIndexTeam {
+    visibility: hidden;
+} */
+

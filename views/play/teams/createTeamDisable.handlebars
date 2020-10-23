@@ -329,35 +329,21 @@
 
 
             <label for="player2" class="text-light">Player 2</label>
-            <input list="player2lista" name="player2" id="player2">
-            <datalist id="player2lista">
-                {{#each listaAmigos}}
-                <option value="{{rivalsId}}">{{email}}</option>
-                {{else}}{{/each}}
-            </datalist>
+            <input autocomplete="off" list="playerlista" name="player2" id="player2">
 
 
             <label for="player3" class="text-light">Player 3</label>
-            <input list="player3lista" name="player3" id="player3">
-            <datalist id="player3lista">
-                {{#each listaAmigos}}
-                <option value="{{rivalsId}}">{{email}}</option>
-                {{else}}{{/each}}
-            </datalist>
+            <input autocomplete="off" list="playerlista" name="player3" id="player3">
+
 
 
             <label for="player4" class="text-light">Player 4</label>
-            <input list="player4lista" name="player4" id="player4">
-            <datalist id="player4lista">
-                {{#each listaAmigos}}
-                <option value="{{rivalsId}}">{{email}}</option>
-                {{else}}{{/each}}
-            </datalist>
-
+            <input autocomplete="off" list="playerlista" name="player4" id="player4">
 
             <label for="player5" class="text-light">Player 5</label>
-            <input list="player5lista" name="player5" id="player5">
-            <datalist id="player5lista">
+            <input autocomplete="off" list="playerlista" name="player5" id="player5">
+
+            <datalist id="playerlista">
                 {{#each listaAmigos}}
                 <option value="{{rivalsId}}">{{email}}</option>
                 {{else}}{{/each}}
@@ -394,7 +380,7 @@
                 //showing file converted to base64
                 var bann = $("#banner-equipe").attr("style", 'background-image: url("data:image/png;base64,' + base64String + '");');
                 document.getElementById('base64input').value = base64String
-                
+
             };
         })(f);
         // Read in the image file as a data URL.

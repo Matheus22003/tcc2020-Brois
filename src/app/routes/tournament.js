@@ -5,13 +5,7 @@ const axios = require('axios');
 
 router.route('/')
     .get((req, res) => {
-        res.render('loggedTournament/index')
-    })
-
-
-router.route('/create')
-    .get((req, res) => {
-        res.render('loggedTournament/formulario')
+        res.render('play/tournaments/index');
     })
 
 module.exports = router

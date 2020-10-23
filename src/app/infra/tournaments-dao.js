@@ -1,8 +1,8 @@
 const mongoose = require("../../config/bd_mongo");
-require("../../../models/equipe");
-require('../../../models/equipe_team');
-const Equipe = mongoose.model('equipe');
-const EquipeTeam = mongoose.model('equipeTeam')
+require("../../../models/tournaments");
+// require('../../../models/equipe_team');
+// const Equipe = mongoose.model('equipe');
+const EquipeTeam = mongoose.model('tournaments')
 
 class EquipeDao {
     novo(integrantesTime, InfosEquipe) {
@@ -75,5 +75,3 @@ class EquipeDao {
         })
     }
 }
-
-module.exports = EquipeDao;

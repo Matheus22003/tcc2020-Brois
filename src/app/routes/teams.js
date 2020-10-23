@@ -6,6 +6,11 @@ const TimeDao = require('../infra/equipe-dao');
 const UserDaoNovo = require('../infra/user-dao-new')
 
 //Escolher Jogo
+
+router.route('/teste').get((req, res) => {
+    res.render('play/teams/addTeam')
+})
+
 router.route('/')
     .get(async (req, res) => {
         // const userDao = new UserDaoNovo();
@@ -17,20 +22,21 @@ router.route('/')
         equipe = JSON.parse(equipe);
         for (let index = 0; index < equipe.length; index++) {
             const element = equipe[index];
-            if (element.id_team.id_player1 == res.locals.user._id ||
-                element.id_team.id_player2 == res.locals.user._id ||
-                element.id_team.id_player3 == res.locals.user._id ||
-                element.id_team.id_player4 == res.locals.user._id ||
-                element.id_team.id_player4 == res.locals.user._id) {
-
-            }
-            else {
+            if (element.id_team.id_player1 != res.locals.user._id &&
+                element.id_team.id_player2 != res.locals.user._id &&
+                element.id_team.id_player3 != res.locals.user._id &&
+                element.id_team.id_player4 != res.locals.user._id &&
+                element.id_team.id_player5 != res.locals.user._id) {
+                equipe.splice(index, 1);
                 equipe.splice(index, 1);
             }
 
         }
-        res.render('play/teams/index', { equipe })
+
+        await res.render('play/teams/index', { equipe })
     })
+
+
 
 router.route('/create')
     .get(async (req, res) => {
@@ -38,7 +44,9 @@ router.route('/create')
         var listaAmigos = await amigos.mostrarQuando(res.locals.user._id)
         listaAmigos = JSON.stringify(listaAmigos);
         listaAmigos = JSON.parse(listaAmigos);
-        res.render('play/teams/createTeam', { listaAmigos });
+
+        res.render('play/teams/addTeam', { listaAmigos });
+        console.log(listaAmigos);
     })
 
     .put(async (req, res) => {
@@ -104,6 +112,7 @@ router.route('/create')
         timeDao.novo(timeIntegrantes, timeInfo)
         // console.log(timeInfo);
 
+        // console.log(timeInfo)
         req.flash("success_msg", `Parabens!!! Time Criado criado com sucesso ${res.locals.user.rivalsId}!`);
         res.redirect('/teams');
     })

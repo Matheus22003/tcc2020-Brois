@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="/css/style_equipe.css">
 </head>
 
-<body>
+<body class="">
 
     <div class="d-flex" id="wrapper">
         {{#if error}}
@@ -53,7 +53,7 @@
         <div id="page-content-wrapper">
             {{#if user}}
             <input type="text" name="_id" id="_id" class="invisible fixed-top"
-                value="{{#each user}}{{rivalsId}}{{else}}{{/each}}">
+                value="{{#each user}}{{_id}}{{else}}{{/each}}">
             {{else}}
             {{/if}}
             <nav class="navbar navbar-expand-lg bg-transparent " style="padding-top: -1vh;">

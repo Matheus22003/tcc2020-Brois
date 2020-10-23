@@ -25,6 +25,9 @@ const Equipe = new Schema({
     countryTeam: {
         type: String,
         required: true
+    },
+    jogoTeam: {
+        type:String
     }
 
 });

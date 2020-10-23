@@ -1,4 +1,196 @@
 .banner-equipe {
-    width: 100% !important;
-    height: 30vh !important;
+  background-image: url('../images/forms/addBanner.png');
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  width: 100% !important;
+  height: 35vh !important;
+}
+
+#countryTeam:focus {
+  /* color: #1a1818 !important; */
+  background-color: #313131;
+}
+
+.banner-equipe:hover {}
+
+.banner-equipe2 {
+  width: 100% !important;
+  height: 1vh !important;
+}
+
+.btn_add_player {
+  background-color: #00FF75;
+  font-size: 27px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.btn-save {
+  color: #fff;
+  border: none;
+  border: solid 2px #FE6400;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0);
+}
+
+.btn-save:hover {
+  background: rgba(255, 255, 255, 0);
+  color: rgb(204, 203, 203);
+}
+
+.drop-borda:hover {
+  background-color: none;
+  color: none;
+}
+
+.banner-equipe2 {
+  width: 100% !important;
+}
+
+.shadow-under {
+  -webkit-box-shadow: 0px 5px 15px -5px #000000 !important;
+  box-shadow: 0px 5px 15px -5px #000000 !important;
+}
+
+.place-form {
+  border-radius: 10px !important;
+  background-color: #161616 !important;
+  border: none !important;
+}
+
+.card-header {
+  background-color: #151515;
+}
+
+.form-desc {
+  resize: none;
+  background-color: #121212;
+}
+
+.form-desc:focus {
+  background-color: #121212;
+}
+
+.check {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+
+.checkmark {
+  margin-top: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #161616;
+  /* border: 1px solid #FE6400; */
+}
+
+.form-control {
+  border: none !important;
+}
+
+.check:hover input~.checkmark {
+  background-color: #1a1818;
+}
+
+.check input:checked~.checkmark {
+  border: 1px solid #FE6400;
+  background-color: #161616;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.check input:checked~.checkmark:after {
+  display: block;
+}
+
+.check .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #FE6400;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.drop {
+  border: none;
+  background-color: #161616;
+}
+
+.setinha:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-color: #323232 transparent transparent transparent;
+}
+
+.dropdown button {
+  border-radius: 10px !important;
+}
+
+.dropdown:hover {
+  border: none;
+  background-color: #323232;
+}
+
+#logo-equipe {
+  background-color: #181818;
+  background-image: url('../images/forms/addIcon.png');
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  height: 20vh;
+  width: 20vh;
+  /* width: 100% !important;
+  height: 35vh !important; */
+  margin-top: -5rem;
+}
+
+.excluir:hover {
+  color: #aa161b;
+}
+
+.popover {
+  background-color: #181818 !important;
+  color: #181818 !important;
+}
+
+.arrow::after {
+  background-color: #181818 !important;
+  color: #181818 !important;
+  font-size: 100vh;
+  border-bottom: red !important;
 }
