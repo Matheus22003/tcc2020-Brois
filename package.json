@@ -32,6 +32,7 @@
     "nodemailer": "^6.4.6",
     "nodemailer-base64-to-s3": "^3.0.2",
     "nodemailer-smtp-transport": "^2.6.0",
+    "nodemon": "^2.0.6",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "passport.socketio": "^3.7.0",
