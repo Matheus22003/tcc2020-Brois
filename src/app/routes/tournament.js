@@ -5,16 +5,12 @@ const axios = require('axios');
 
 router.route('/')
     .get((req, res) => {
-        res.render('play/tournaments/index');
 
-        axios.get('br1.api.riotgames.com/lor/ranked/v1/leaderboards', {
-            params: {
-                api_key: "RGAPI-7b7c76e0-30f7-4cc2-8863-ca63022f28c1"
-
-            }
-        })
+        axios.post('https://americas.api.riotgames.com/lol/tournament-stub/v4/providers',
+            { params: { api_key: "RGAPI-a28cdd7c-6884-42a4-acb1-7fcfd1c6a3e6" } },
+            { headers: { "region": "BR", "url": "https://localhost:8080" } })
             .then(function (response) {
-                console.log(response);
+                res.render('play/tournaments/index');
             })
             .catch(function (error) {
                 console.log(error);
