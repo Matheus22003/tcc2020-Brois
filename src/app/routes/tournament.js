@@ -8,7 +8,7 @@ router.route('/')
 
         axios.post('https://americas.api.riotgames.com/lol/tournament-stub/v4/providers',
             { params: { api_key: "RGAPI-7b7c76e0-30f7-4cc2-8863-ca63022f28c1" } },
-            { headers: { "region": "BR", "url": "https://tcc2020-brois.herokuapp.com/" } })
+            { headers: { "region": "BR", "url": "https://tcc2020-brois.herokuapp.com" } })
             .then(function (response) {
                 res.render('play/tournaments/index');
             })
