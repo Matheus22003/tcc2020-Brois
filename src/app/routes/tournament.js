@@ -57,8 +57,29 @@ router.route('/')
             }
         })
 
-        idProvedor.data
+        var idtournament = await axios({
+            method: 'post',
+            url: 'https://americas.api.riotgames.com/lol/tournament-stub/v4/tournaments?api_key=RGAPI-7b7c76e0-30f7-4cc2-8863-ca63022f28c1',
+            headers: {},
+            data: {
+                "name": "Teste",
+                "providerId": idProvedor.data
+            }
+        })
 
+        var idUserCodes = await axios({
+            method: 'post',
+            url: `https://americas.api.riotgames.com/lol/tournament-stub/v4/codes?count=1&tournamentId=${idtournament.data}&api_key=RGAPI-7b7c76e0-30f7-4cc2-8863-ca63022f28c1`,
+            headers: {},
+            data: {
+                "mapType": "SUMMONERS_RIFT",
+                "pickType": "TOURNAMENT_DRAFT",
+                "spectatorType": "ALL",
+                "teamSize": 5
+            }
+        })
+
+        console.log(idUserCodes.data);
         res.render('play/tournaments/index');
 
     })
