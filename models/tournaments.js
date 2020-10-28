@@ -38,6 +38,9 @@ const Tournaments = new Schema({
     },
     hotaInicio: {
         type: String
+    },
+    idTournament: {
+        type: String
     }
 });
 mongoose.model("tournaments", Tournaments);

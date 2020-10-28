@@ -41,6 +41,12 @@ router.route('/')
 
     })
 
-    router.route(`/create`)
+router.route(`/create`)
+    .get((req, res) => {
+        res.render(`play/tournaments/createTournament`);
+    })
+    .put((req, res) => {
+        
+    })
 
 module.exports = router

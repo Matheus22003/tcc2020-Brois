@@ -1,0 +1,258 @@
+{{#each erros}}
+<div class="fixed-top mt-5 container fadeOut animated faster delay-5s">
+    <div class="alert alert-danger mt-5 bounceInDown animated " role="alert">{{texto}}</div>
+</div>
+{{else}}
+{{/each}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<style>
+    .border-titleTest {
+        position: fixed;
+    }
+</style>
+<div class="container-fluid" id="conteudoPagina">
+
+    <div class="border-title">
+
+        <h7 class="text-light pl-1 ml-2" id="home">Play / Torneios / Create</h7>
+        <h1 class="text-light pl-1 ml-2">Torneios</h1>
+    </div>
+
+</div>
+
+<form method="post" action="/teams/torunament" id="formRegTime" class="">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="disable" class="invisible disabled position-absolute" name="base64input" id="base64input">
+    <input type="disable" class="invisible disabled position-absolute" name="iconeTimebase64input"
+        id="iconeTimebase64input">
+
+    <div class="container-fluid" style="height:80vh;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+        <div class="banner-equipe shadow-under" id="banner-equipe">
+            <input type="file" class="w-100 h-100 pointer" style="position: relative;z-index: 2;opacity:0"
+                id="banner_time" name="banner_time" accept="image/png, image/jpeg, image/svg+xml">
+        </div>
+        <div class="banner-equipe2 mt-2" id="banner-equipe">
+        </div>
+        <div class="logo-equipe shadow-under rounded-circle mx-auto " id="logo-equipe">
+            <input type="file" class="w-100 h-100 pointer" style="position: relative;z-index: 3;opacity:0"
+                id="banner_equipe" name="banner_equipe" accept="image/png, image/jpeg, image/svg+xml">
+
+        </div>
+
+        <div class="container-fluid mb-5 col-12 col-md-10">
+            <h3 class="float-left text-light font-play">Informações</h3>
+        </div>
+        <div class="container col-10 mb-5">
+            <div class="card shadow-under">
+
+                <div class="card-header text-light font-play">
+                    SOBRE
+                </div>
+                <div class="card-body text-light">
+                    <div class="form-group col-12">
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label font-play">Name Torneio</label>
+                            <div class="col-sm-10">
+                                <input placeholder="max. 35 caracteres" type="text"
+                                    class="text-light font-play form-control place-form" id="nomeTime" name="nomeTime"
+                                    maxlength="35">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label font-play">Quantidade de
+                                Equipes:</label>
+                            <div class="col-sm-10">
+                                <input type="number" placeholder="Apenas numeros"
+                                    class="text-light font-play form-control place-form fix-rounded-right" required>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label font-play">Level minimo:</label>
+                            <div class="col-sm-10">
+                                <input type="number" placeholder="Apenas numeros de 1 a 30"
+                                    class="text-light font-play form-control place-form fix-rounded-right" required>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label font-play">Level maximo:</label>
+                            <div class="col-sm-10">
+                                <input type="number" placeholder="Apenas numeros de 1 a 30"
+                                    class="text-light font-play form-control place-form fix-rounded-right" required>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label font-play">Tipo de
+                                Premio:</label>
+                            <div class="col-sm-10">
+
+                                <select class="text-light font-play form-control place-form fix-rounded-right" required>
+                                    <option value="rpoints">Rpoints</option>
+                                    <option value="skin">Skin</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label font-play">Valor ou ID da
+                                Skin:</label>
+                            <div class="col-sm-10">
+                                <input type="text" placeholder=""
+                                    class="text-light font-play form-control place-form fix-rounded-right" required>
+
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label font-play">Hora de Inicio:</label>
+                            <div class="col-sm-10">
+                                <input type="time"
+                                    class="text-light font-play form-control place-form fix-rounded-right" required>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label font-play">Data de Inicio:</label>
+                            <div class="col-sm-10">
+                                <input type="date"
+                                    class="text-light font-play form-control place-form fix-rounded-right" required>
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label font-play">MAPA</label>
+                            <div class="col-sm-10">
+                                <input list="countryTeams" class="dropdown-toggle setinha form-control drop text-light "
+                                    name="countryTeam" autocomplete="off" id="countryTeam">
+                                <datalist id="countryTeams">
+                                    <option value="Mirage">Mirage</option>
+                                </datalist>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{!-- card  dois --}}
+        <div class="container col-10 card2 mb-5">
+            <div class="card shadow-under">
+                <div class="card-header text-light font-play">
+                    DESCRIÇÃO TORNEIO
+                </div>
+
+                <div class="card-body text-light">
+                    <div class="form-group">
+                        <textarea class="text-light font-play form-control rounded-0 form-desc font-play"
+                            name="descricaoTeam" id="descricaoTeam" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid mb-5 col-12 col-md-10">
+            <div class=" d-flex justify-content-center">
+                <button type="submit" class="btn btn-save btn-lg btn-block"><span class="save font-play">Salvar</span>
+                    <i onclick="" class="fas fa-arrow-right ml-1"></i></button>
+
+            </div>
+        </div>
+
+    </div>
+</form>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+<script src="/js/resize.js"></script>
+<script src="/js/verificarCampoErrado.js"></script>
+<script>
+    // Check for the File API support.
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+        document.getElementById('banner_time').addEventListener('change', handleFileSelect, false);
+        document.getElementById('banner_equipe').addEventListener('change', handleFileSelectIcone, false);
+    } else {
+        alert('The File APIs are not fully supported in this browser.');
+    }
+    varificarCampoNumeroFixo("tagTime", 3, `Coloque 3 caracteres com Tag!`);
+    campoVazio("nomeTime");
+    campoVazio("countryTeam");
+
+
+    function handleFileSelect(evt) {
+        var f = evt.target.files[0]; // FileList object
+        var reader = new FileReader();
+        // Closure to capture the file information.
+        reader.onload = (function (theFile) {
+            return function (e) {
+                var binaryData = e.target.result;
+                //Converting Binary Data to base 64
+                var base64String = window.btoa(binaryData);
+                //showing file converted to base64
+                var bann = $("#banner-equipe").attr("style", 'background-image: url("data:image/png;base64,' + base64String + '");');
+                document.getElementById('base64input').value = base64String
+
+            };
+        })(f);
+        // Read in the image file as a data URL.
+        reader.readAsBinaryString(f);
+    }
+
+    function handleFileSelectIcone(evt) {
+        var f = evt.target.files[0]; // FileList object
+        var reader = new FileReader();
+        // Closure to capture the file information.
+        reader.onload = (function (theFile) {
+            return function (e) {
+                var binaryData = e.target.result;
+                //var resize = new window.resize();
+                //resize.init();
+                //resize.photo(, 800, 'dataURL', () => {
+
+                //})
+                //Converting Binary Data to base 64
+                var base64String = window.btoa(binaryData);
+                //showing file converted to base64
+                var bann = $("#logo-equipe").attr("style", 'background-image: url("data:image/png;base64,' + base64String + '");');
+                document.getElementById('iconeTimebase64input').value = base64String
+
+            };
+        })(f);
+        // Read in the image file as a data URL.
+        reader.readAsBinaryString(f);
+    }
+
+    function deljogador(id) {
+        var idNew = id.id
+        var rivalsId = $(`#${idNew}`).val();
+        $(`#amigosParaEquipe`).append(`<option id="opcao${rivalsId}" value="${rivalsId}">${rivalsId}</option>`);
+        $(`#${idNew}`).remove();
+        $(`#${idNew}cont`).remove();
+
+    }
+    /*$(function () {
+        $('#addParticipante').popover({
+            container: 'body',
+            placement: 'top',
+            html: true,
+            content: $(addIntegrantesPop).html()
+        })
+    })*/
+
+
+
+
+</script>
