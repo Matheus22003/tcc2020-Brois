@@ -95,18 +95,18 @@
                     m = $.trim(m).length === 1 ? '0' + m : m;
                     s = $.trim(s).length === 1 ? '0' + s : s;
                     // show how many hours, minutes and seconds are left
-                    var completo = `${d} D ${h} H ${m} M ${s} S`
+                    var completo = `${d}D ${h}H ${m}M ${s}S`
                     if (d == `00`) {
-                        completo = completo.replace(`${d} D`, ``);
+                        completo = completo.replace(`${d}D`, ``);
                     }
                     if (h == `00`) {
-                        completo = completo.replace(`${h} H`, ``);
+                        completo = completo.replace(`${h}H`, ``);
                     }
                     if (m == `00`) {
-                        completo = completo.replace(`${m} M`, ``);
+                        completo = completo.replace(`${m}M`, ``);
                     }
                     if (s == `00`) {
-                        completo = completo.replace(`${s} S`, ``);
+                        completo = completo.replace(`${s}S`, ``);
                     }
                     if (s == `00` && m == `00` && h == `00` && d == `00`) {
                         completo = `Começou!`;
@@ -185,8 +185,8 @@
             <div class="card font-play cardsInfosTour d-none" id="{{_id}}card"
                 style="width: 39vh;height:80vh;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
                 <img class="card-img-top" src="data:image/png;base64,{{fotoTorneio}}" alt="Card image cap">
-                <div class="font-play mx-auto row container-fluid ">
-                    <h5 class="card-title weight-700 ml-2 font-play">EILAT WORLDS E-SPORTS</h5>
+                <div class="font-play mt-1 mx-auto row container-fluid ">
+                    <h5 class="card-title weight-700 ml-2 font-play">{{nomeTorneio}}</h5>
                     <div class="col-6">
                         <p class="card-text weight-700 text-left"
                             style="line-height: 3vh; color: #7C7C7C; font-size:15px !important">Equipes

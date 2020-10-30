@@ -12,14 +12,24 @@ router.route('/')
         torneios = JSON.stringify(torneios);
         torneios = JSON.parse(torneios);
         // console.log(torneios);
-        for (let i = 0; i < torneios.length; i++) {
-            const element = torneios[i];
-            if (element.iniciado == true) {
-               torneios = torneios.indexOf(i)
+
+        var torDisponiveis = [];
+        // torneios.forEach(element => {
+        //     console.log(element.iniciado);
+        // });
+        for (let index = 0; index < torneios.length; index++) {
+            const element = torneios[index];
+
+            if (element.iniciado == false) {
+                torDisponiveis.push(element); 
             }
-            
+            else {
+
+            }
         }
-        res.render('play/tournaments/index', { torneios: torneios });
+        console.log(torDisponiveis);
+
+        res.render('play/tournaments/index', { torneios: torDisponiveis });
     })
 
 router.route(`/create`)
