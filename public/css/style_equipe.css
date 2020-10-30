@@ -206,3 +206,15 @@
 .botaoMobile::after {
   border: none;
 }
+
+.plussMenu {
+  transition: all 0.3s;
+}
+
+.plussMenuRotate {
+  transform: rotate(43deg);
+}
+
+.hoverMenu:hover {
+  background-color: #666666;
+}

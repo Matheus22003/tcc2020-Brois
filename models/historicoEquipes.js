@@ -11,6 +11,9 @@ const HistoricoEquipe = new Schema({
     },
     posicao: {
         type: String
+    },
+    id_torneioUser: {
+        type: String
     }
 });
 mongoose.model("historicoEquipes", HistoricoEquipe);

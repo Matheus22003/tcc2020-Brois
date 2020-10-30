@@ -94,6 +94,7 @@
 }
 
 .menu-items:after {
+  margin-top: -1px;
   content: "";
   position: absolute;
   right: 0;

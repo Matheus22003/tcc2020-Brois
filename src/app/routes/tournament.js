@@ -2,8 +2,27 @@ const { express } = require('../../config/custom-express');
 const router = express.Router();
 // const rotasTour = require('./helper_routes/rotasTournament')
 const axios = require('axios');
+const TournamentDao = require(`../infra/tournament-dao`);
+
+
 router.route('/')
     .get(async (req, res) => {
+        var tournamentDao = new TournamentDao();
+        var torneios = await tournamentDao.getTorneios();
+        torneios = JSON.stringify(torneios);
+        torneios = JSON.parse(torneios);
+        console.log(torneios);
+        res.render('play/tournaments/index',{torneios: torneios});
+    })
+
+router.route(`/create`)
+    .get(async (req, res) => {
+
+
+        res.render(`play/tournaments/createTournament`);
+    })
+    .put(async (req, res) => {
+
         var idProvedor = await axios({
             method: 'post',
             url: 'https://americas.api.riotgames.com/lol/tournament-stub/v4/providers?api_key=RGAPI-7b7c76e0-30f7-4cc2-8863-ca63022f28c1',
@@ -24,29 +43,41 @@ router.route('/')
             }
         })
 
-        var idUserCodes = await axios({
-            method: 'post',
-            url: `https://americas.api.riotgames.com/lol/tournament-stub/v4/codes?count=1&tournamentId=${idtournament.data}&api_key=RGAPI-7b7c76e0-30f7-4cc2-8863-ca63022f28c1`,
-            headers: {},
-            data: {
-                "mapType": "SUMMONERS_RIFT",
-                "pickType": "TOURNAMENT_DRAFT",
-                "spectatorType": "ALL",
-                "teamSize": 5
-            }
-        })
+        // var idUserCodes = await axios({
+        //     method: 'post',
+        //     url: `https://americas.api.riotgames.com/lol/tournament-stub/v4/codes?count=1&tournamentId=${idtournament.data}&api_key=RGAPI-7b7c76e0-30f7-4cc2-8863-ca63022f28c1`,
+        //     headers: {},
+        //     data: {
+        //         "mapType": "SUMMONERS_RIFT",
+        //         "pickType": "TOURNAMENT_DRAFT",
+        //         "spectatorType": "ALL",
+        //         "teamSize": 5
+        //     }
+        // })
+        var dadosTorneio = {
+            banner_time: req.body.base64_torneioBanner,
+            fotoTorneio: req.body.base64_torneioIcone,
+            nomeTorneio: req.body.nomeTorneio,
+            jogoTorneio: req.body.jogoTorneio,
+            qtdeParticipantes: req.body.qtdeParticipantes,
+            descricaoTorneio: req.body.descricaoTorneio,
+            mapas: req.body.mapas,
+            minLevel: req.body.minLevel,
+            maxLevel: req.body.maxLevel,
+            tipoPremio: req.body.tipoPremio,
+            premioTotal: req.body.premioTotal,
+            dataInicio: req.body.dataInicio,
+            hotaInicio: req.body.hotaInicio,
+            idTournament: idtournament.data,
+            criadora: req.body.criadora
+        }
+        var tournamentDao = new TournamentDao();
 
-        console.log(idUserCodes.data);
-        res.render('play/tournaments/index');
+        var add = await tournamentDao.novo(dadosTorneio);
 
-    })
 
-router.route(`/create`)
-    .get((req, res) => {
-        res.render(`play/tournaments/createTournament`);
-    })
-    .put((req, res) => {
-        
+
+        res.redirect(`/tournament`);
     })
 
 module.exports = router

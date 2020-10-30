@@ -11,6 +11,16 @@ const Tournaments = new Schema({
         type: String,
         required: true
     },
+    tipoJogo: {
+        type: String
+    },
+    criadora: {
+        type: String
+    },
+    jogoTorneio: {
+        type: String,
+        required: true
+    },
     qtdeParticipantes: {
         type: Number,
         required: true

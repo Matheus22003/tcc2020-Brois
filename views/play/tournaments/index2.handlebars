@@ -1,0 +1,838 @@
+{{#each erros}}
+<div class="fixed-top mt-5 container fadeOut animated faster delay-5s">
+    <div class="alert alert-danger mt-5 bounceInDown animated " role="alert">{{texto}}</div>
+</div>
+{{else}}
+{{/each}}
+<style>
+    .card {
+        line-height: 1px;
+    }
+
+    .c-cinza {
+        color: #B2B2B2;
+
+    }
+
+    .c-orange {
+        color: #FE6400;
+    }
+
+    .direita {
+        margin-right: 10px;
+    }
+</style>
+<div class="container-fluid" id="conteudoPagina">
+
+    <div class="border-title">
+        <h7 class="text-light pl-1 ml-2" id="home">Home / Tournament</h7>
+        <h1 class="text-light pl-1 ml-2">WELCOME
+            {{#if user}}{{#each user}}{{nome}}{{else}}{{/each}}{{else}}USER{{/if}}!</h1>
+    </div>
+    <div class="row mt-3" style="height:80vh;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+        <div class="col-12 col-md-9 col-lg-9 col-sm-12 text-light"
+            style="font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+
+            {{#each torneios}}
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">{{nomeTorneio}}</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play" id="time_t1">01D 01H 43M</td>
+                                            <td class="border-0 c-orange font-play">{{criadora}}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            {{/each}}
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pb-n5 mb-3 mt-2 col-12">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="ml-n3">
+                                <table class="table mt-3">
+                                    <tbody class="border-0 ">
+                                        <tr class="border-0 ">
+                                            <td class="border-0 c-cinza pl-3 font-play">STARTS IN</td>
+                                            <td class="border-0 text-light font-play">LSL CSGO COLOGNE 2020</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="border-0">
+                                        <tr class="border-0 pr-2">
+                                            <td class="border-0 text-light font-play">01H 43M 60S</td>
+                                            <td class="border-0 c-orange font-play">LATAM eSports Leagues</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row float-right direita ml-1 my-auto c-cinza ">
+                                <h6 class="font-play small">MATA-MATA</h6>
+                                <h6 class="ml-3 small font-play">5V5 TOURNAMENT</h6>
+                                <h6 class="ml-3 font-play small">Público</h6>
+                                <h6 class="ml-3 font-play small">$0,00</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="col-12 col-md-2 col-lg-2 col-sm-12" id="friendList">
+        </div>
+
+    </div>
+</div>
+
+
+<script src="/js/countdown.js"></script>
+
+<script>
+    $(document).ready(() => {
+        //console.log(countdown(new Date("2020-10-30T15:40:00Z")).getTime())
+        countdown.setLabels(
+            ' milissegundo|S|M |H | dia| semana| mês| ano| década| século| milênio',
+            ' milissegundos|S|M |H | dias| semanas| meses| anos| décadas| séculos| milênios',
+            '  ',
+            '   ',
+            'agora');
+        var timerId =
+            countdown(
+                new Date("2020-10-30T15:40:00Z"),
+                function (ts) {
+                    document.getElementById('time_t1').innerHTML = ts.toHTML("strong");
+                },
+                countdown.HOURS | countdown.MINUTES | countdown.SECONDS);
+
+        //new Date("2020-10-30T15:40:00Z")
+        // Update the count down every 1 second
+
+        let height = $(window).height();
+        let width = $(window).width();
+        console.log(height);
+
+        if (width >= 1200) {
+            console.log("É maior ou igual a 1200")
+        }
+        else if (width >= 992) {
+            console.log("É maior ou igual a 992")
+        }
+        else if (width >= 768) {
+            console.log("É maior ou igual a 768")
+        }
+        else if (width >= 576) {
+            console.log("É maior ou igual a 576")
+        }
+    })
+</script>
