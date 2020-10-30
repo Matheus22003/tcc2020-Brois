@@ -11,8 +11,15 @@ router.route('/')
         var torneios = await tournamentDao.getTorneios();
         torneios = JSON.stringify(torneios);
         torneios = JSON.parse(torneios);
-        console.log(torneios);
-        res.render('play/tournaments/index',{torneios: torneios});
+        // console.log(torneios);
+        for (let i = 0; i < torneios.length; i++) {
+            const element = torneios[i];
+            if (element.iniciado == true) {
+               torneios = torneios.indexOf(i)
+            }
+            
+        }
+        res.render('play/tournaments/index', { torneios: torneios });
     })
 
 router.route(`/create`)
@@ -55,16 +62,18 @@ router.route(`/create`)
         //     }
         // })
         var dadosTorneio = {
-            banner_time: req.body.base64_torneioBanner,
-            fotoTorneio: req.body.base64_torneioIcone,
+            fotoTorneio: req.body.base64_torneioBanner,
             nomeTorneio: req.body.nomeTorneio,
+            tipoJogo: req.body.tipoJogo,
             jogoTorneio: req.body.jogoTorneio,
             qtdeParticipantes: req.body.qtdeParticipantes,
             descricaoTorneio: req.body.descricaoTorneio,
+            padraoGame: "Ranqueada",
             mapas: req.body.mapas,
             minLevel: req.body.minLevel,
             maxLevel: req.body.maxLevel,
             tipoPremio: req.body.tipoPremio,
+            entrada: req.body.entrada,
             premioTotal: req.body.premioTotal,
             dataInicio: req.body.dataInicio,
             hotaInicio: req.body.hotaInicio,
@@ -74,6 +83,8 @@ router.route(`/create`)
         var tournamentDao = new TournamentDao();
 
         var add = await tournamentDao.novo(dadosTorneio);
+
+        console.log(dadosTorneio)
 
 
 

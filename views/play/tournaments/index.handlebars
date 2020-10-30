@@ -67,9 +67,67 @@
             style="font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
             {{#each torneios}}
             <script>
-                var teste = `{{{_id}}}`;
-                $(`#tour_${teste}`).ready(() => {
-                    calcularTempo(teste)
+                var teste{{{ _id }}} = `{{{_id}}}`;
+                $(`#tour_${teste{{{ _id }}} }`).ready(() => {
+                    var id{{{_id}}} = `#time_${ teste{{{ _id }}} }`;
+                    var $clock{{{_id}}} = $(`${ id{{{ _id }}} }`),
+                        eventTime = moment(`${ $(`#tour_${teste{{{ _id }}} }`).val()} `, 'YYYY-MM-DD HH:mm:ss').unix(),
+                    currentTime = moment().unix(),
+                    diffTime = eventTime - currentTime,
+                    duration = moment.duration(diffTime * 1000, 'milliseconds'),
+                    interval = 1000;
+
+                // if time to countdown
+                if (diffTime > 0) {
+                    // Show clock
+                    // $clock.show();
+                    var calc{{{ _id }}} = setInterval(function () {
+
+
+                    duration = moment.duration(duration.asMilliseconds() - interval, 'milliseconds');
+                    var d = moment.duration(duration).days(),
+                        h = moment.duration(duration).hours(),
+                        m = moment.duration(duration).minutes(),
+                        s = moment.duration(duration).seconds();
+
+                    d = $.trim(d).length === 1 ? '0' + d : d;
+                    h = $.trim(h).length === 1 ? '0' + h : h;
+                    m = $.trim(m).length === 1 ? '0' + m : m;
+                    s = $.trim(s).length === 1 ? '0' + s : s;
+                    // show how many hours, minutes and seconds are left
+                    var completo = `${d} D ${h} H ${m} M ${s} S`
+                    if (d == `00`) {
+                        completo = completo.replace(`${d} D`, ``);
+                    }
+                    if (h == `00`) {
+                        completo = completo.replace(`${h} H`, ``);
+                    }
+                    if (m == `00`) {
+                        completo = completo.replace(`${m} M`, ``);
+                    }
+                    if (s == `00`) {
+                        completo = completo.replace(`${s} S`, ``);
+                    }
+                    if (s == `00` && m == `00` && h == `00` && d == `00`) {
+                        completo = `Começou!`;
+                        clearInterval(calc{{{ _id }}});
+                        let valor = `#cadastro{{{_id}}}`
+                        $(`${valor}`).addClass(`disabled`)
+                        socket.emit(`completarTorneio`, { _id: `{{{_id}}}` })
+                    }
+
+                $clock{{{_id}}}.text(completo)
+
+                        }, interval);
+
+                    } else {
+                    var completo = `Começou!`
+                    $clock{{{_id}}}.text(completo)
+                    var valor = `#cadastro{{{_id}}}`
+                    $(`${valor}`).addClass(`disabled`);
+                    socket.emit(`completarTorneio`, { _id: `{{{_id}}}` })
+
+                }
                 })
 
             </script>
@@ -124,9 +182,9 @@
         <div class="col-12 col-md-2 col-lg-2 col-sm-12 text-light " id="friendList">
             {{#each torneios}}
 
-            <div class="card font-play d-none" id="{{_id}}card"
+            <div class="card font-play cardsInfosTour d-none" id="{{_id}}card"
                 style="width: 39vh;height:80vh;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-                <img class="card-img-top" src="/images/forms/addIcon.png" alt="Card image cap">
+                <img class="card-img-top" src="data:image/png;base64,{{fotoTorneio}}" alt="Card image cap">
                 <div class="font-play mx-auto row container-fluid ">
                     <h5 class="card-title weight-700 ml-2 font-play">EILAT WORLDS E-SPORTS</h5>
                     <div class="col-6">
@@ -136,7 +194,7 @@
                     </div>
                     <div class="card-text col-6 text-center" style="margin-top: 1.5vh">
                         <p>
-                            0/100
+                            00/{{qtdeParticipantes}}
                         </p>
                     </div>
 
@@ -209,13 +267,23 @@
 
 
                     <div class="col-12 mb-2" style="width: 100%;">
-                        <a href="#" class="btn btn-primary btn-rivals mx-auto" style="width: 100%;">REGISTRAR EQUIPE</a>
+                        <a href="#" class="btn btn-secondary btn-rivals mx-auto " id="cadastro{{_id}}"
+                            style="width: 100%;">REGISTRAR EQUIPE</a>
                     </div>
                 </div>
             </div>
             {{else}}
             {{/each}}
         </div>
+
+        {{#each torneios}}
+        {{else}}
+        <div class="col-12">
+            <h3 class="font-play text-center text-light">Desculpe, mas por enquanto os torneios acabaram :(</h3> <br>
+            <h3 class="font-play text-center text-light">Em breve teremos mais para sua jornada 😎</h3>
+        </div>
+        {{/each}}
+        
 
     </div>
 </div>
@@ -228,69 +296,15 @@
     function aparecerBanner(padraoId) {
         if ($(`#${padraoId}card`).hasClass(`d-none`)) {
 
+            $(`.cardsInfosTour `).addClass(`d-none`)
+
             $(`#${padraoId}card`).removeClass(`d-none`);
+
+
 
         } else {
             $(`#${padraoId}card`).addClass(`d-none`)
         }
-    }
-    function calcularTempo(idRaiz) {
-        var id = `#time_${idRaiz}`;
-        var $clock = $(`${id}`),
-            eventTime = moment(`${$(`#tour_${idRaiz}`).val()} `, 'YYYY-MM-DD HH:mm:ss').unix(),
-            currentTime = moment().unix(),
-            diffTime = eventTime - currentTime,
-            duration = moment.duration(diffTime * 1000, 'milliseconds'),
-            interval = 1000;
-
-        // if time to countdown
-        if (diffTime > 0) {
-            // Show clock
-            // $clock.show();
-            var calc = setInterval(function () {
-
-                duration = moment.duration(duration.asMilliseconds() - interval, 'milliseconds');
-                var d = moment.duration(duration).days(),
-                    h = moment.duration(duration).hours(),
-                    m = moment.duration(duration).minutes(),
-                    s = moment.duration(duration).seconds();
-
-                d = $.trim(d).length === 1 ? '0' + d : d;
-                h = $.trim(h).length === 1 ? '0' + h : h;
-                m = $.trim(m).length === 1 ? '0' + m : m;
-                s = $.trim(s).length === 1 ? '0' + s : s;
-                // show how many hours, minutes and seconds are left
-                var completo = `${d} D ${h} H ${m} M ${s} S`
-                console.log(completo)
-                if (d == `00`) {
-                    completo = `${h} H ${m} M ${s} S`
-                }
-                if (h == `00`) {
-                    completo = `${m} M ${s} S`
-                }
-                if (m == `00`) {
-                    completo = `${s} S`
-                }
-                if (s == `00`) {
-                    completo = ``
-                }
-                if (s == `00` && m == `00` && h == `00` && d == `00`) {
-                    completo = `Começou!`
-                    clearInterval(calc);
-
-
-                }
-
-                $clock.text(completo)
-                console.log(completo)
-
-            }, interval);
-
-        } else {
-            var completo = `Começou!`
-            $clock.text(completo)
-        }
-
     }
 
     $(document).ready(() => {

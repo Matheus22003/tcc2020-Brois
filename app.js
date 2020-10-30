@@ -6,6 +6,7 @@ const tournament = require('./src/app/routes/tournament') // Rota de Torneio
 const verificarDisponivel = require('./src/app/scripts/verificarIdDisponivel') //Verificar disponibilidade de email em tempo real
 const listarAmigos = require('./src/app/scripts/listarUsuariosParaAmigos'); // listarUsuariosParaAdd
 const addAmigos = require('./src/app/scripts/addAmigo');
+const completaTorunament = require('./src/app/scripts/iniciarTorneio')
 
 //Rotas
     // Rota Raiz

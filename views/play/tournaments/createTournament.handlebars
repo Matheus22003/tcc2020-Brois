@@ -63,8 +63,8 @@
                             <label for="inputEmail3" class="col-sm-2 col-form-label font-play">Criadora Torneio</label>
                             <div class="col-sm-10">
                                 <input placeholder="max. 35 caracteres" type="text"
-                                    class="text-light font-play form-control place-form" id="criadora"
-                                    name="criadora" maxlength="35">
+                                    class="text-light font-play form-control place-form" id="criadora" name="criadora"
+                                    maxlength="35">
                             </div>
                         </div>
 
@@ -75,6 +75,19 @@
                                     id="jogoTorneio" name="jogoTorneio" required>
                                     <option value="lol">Lol</option>
                                     <option value="csgo">CSGO</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="tipoJogo" class="col-sm-2 col-form-label font-play">Tipo de Jogo:</label>
+                            <div class="col-sm-10">
+                                <select class="text-light font-play form-control place-form fix-rounded-right"
+                                    id="tipoJogo" name="tipoJogo" required>
+                                    <option value="5v5">5v5</option>
+                                    <option value="4v4">4v4</option>
+                                    <option value="5v5">3v3</option>
+                                    <option value="4v4">2v2</option>
+                                    <option value="5v5">1v1</option>
                                 </select>
                             </div>
                         </div>
@@ -143,7 +156,8 @@
 
 
                         <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label font-play">Valor ou ID da
+                            <label for="inputPassword3" class="col-sm-2 col-form-label font-play">Valor do premio ou ID
+                                da
                                 Skin:</label>
                             <div class="col-sm-10">
                                 <input id="premioTotal" name="premioTotal" type="text" placeholder=""
@@ -152,7 +166,15 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label font-play">Valor da
+                                Entrada:</label>
+                            <div class="col-sm-10">
+                                <input id="entrada" name="entrada" type="text" placeholder=""
+                                    class="text-light font-play form-control place-form fix-rounded-right" required>
 
+                            </div>
+                        </div>
 
 
                         <div class="form-group row">
@@ -175,19 +197,7 @@
                             </div>
                         </div>
 
-
-
-                        <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label font-play">MAPA</label>
-                            <div class="col-sm-10">
-                                <input list="countryTeams" class="dropdown-toggle setinha form-control drop text-light "
-                                    name="countryTeam" autocomplete="off" id="countryTeam">
-                                <datalist id="countryTeams">
-                                    <option value="Mirage">Mirage</option>
-                                </datalist>
-
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

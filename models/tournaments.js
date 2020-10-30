@@ -1,6 +1,9 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 const Tournaments = new Schema({
+    iniciado:{
+        type: mongoose.Schema.Types.Boolean
+    },
     fotoTorneio: {
         type: String
     },
@@ -14,9 +17,6 @@ const Tournaments = new Schema({
     tipoJogo: {
         type: String
     },
-    criadora: {
-        type: String
-    },
     jogoTorneio: {
         type: String,
         required: true
@@ -26,6 +26,9 @@ const Tournaments = new Schema({
         required: true
     },
     descricaoTorneio: {
+        type: String
+    },
+    padraoGame: {
         type: String
     },
     mapas: {
@@ -40,6 +43,9 @@ const Tournaments = new Schema({
     tipoPremio: {
         type: String
     },
+    entrada: {
+        type: String
+    },
     premioTotal: {
         type: Number
     },
@@ -50,6 +56,9 @@ const Tournaments = new Schema({
         type: String
     },
     idTournament: {
+        type: String
+    },
+    criadora: {
         type: String
     }
 });

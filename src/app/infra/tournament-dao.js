@@ -1,4 +1,5 @@
 const mongoose = require("../../config/bd_mongo");
+const { unlock } = require("../routes/email");
 require("../../../models/tournaments");
 const Tournament = mongoose.model('tournaments');
 require("../../../models/historicoEquipes");
@@ -20,7 +21,7 @@ class TournamentDao {
     async getTorneios(filtro) {
         try {
             const torneios = await Tournament.find(filtro).exec();
-            
+
             return torneios
 
         } catch (error) {
@@ -28,15 +29,12 @@ class TournamentDao {
         }
     }
 
-    atualizar(parametro, update) {
-        return Tournament.findOneAndUpdate(parametro, update).then(suc => {
-            suc = JSON.stringify(suc);
-            suc = JSON.parse(suc);
-            return suc
-        }).catch(err => {
-            console.log(err);
-            return err
-        })
+    async atualizar(parametro, update) {
+        try {
+            return Tournament.findOneAndUpdate(parametro, update);
+        } catch (error) {
+            return error
+        }
     }
 
     addPlayerToTournament(idTorneio, idEquipe, id_torneioUser) {
