@@ -299,7 +299,10 @@
                                             <img src="data:image/png;base64,{{foto_time}}" class=" img-fluid" alt="...">
                                             <div class="font-play">
                                                 {{tagTeam}}
-                                                <button class="btn btn-secondary btn-rivals mx-auto ">Cadastrar</button>
+                                                <form action="/tournament/addTeamTournament" method="POST" >
+                                                    <input type="text" id="" value="{{_id}}" class="d-none">
+                                                    <button class="btn btn-secondary btn-rivals mx-auto ">Cadastrar</button>
+                                                </form>
                                             </div>
                                         </div>
                                         {{else}}

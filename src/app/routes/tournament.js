@@ -134,4 +134,6 @@ router.route(`/create`)
         res.redirect(`/tournament`);
     })
 
+
+router.route(`/addTeamTournament`)
 module.exports = router
