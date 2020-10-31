@@ -355,13 +355,24 @@
 {{/if}}
 <div class="d-none conteiner " id="changeGameOpto">
     <button class="btn btn-block text-light border btn-secondary font-play"
-        style="border-color: #fe6400 !important;background-color:#181818;" onclick="hideAllPopovers()">CS:GO</button>
+        style="border-color: #fe6400 !important;background-color:#181818;" id="csMenu"
+        onclick="hideAllPopovers()">CS:GO</button>
     <button class="btn btn-block text-light border btn-secondary font-play"
-        style="border-color: #fe6400 !important;background-color:#181818;" onclick="hideAllPopovers()">LOL</button>
+        style="border-color: #fe6400 !important;background-color:#181818;" id="lolMenu"
+        onclick="hideAllPopovers()">LOL</button>
     <button class="btn btn-block text-light border btn-secondary font-play"
-        style="border-color: #fe6400 !important;background-color:#181818;" onclick="hideAllPopovers()">VALORANT</button>
+        style="border-color: #fe6400 !important;background-color:#181818;" id="valorantMenu"
+        onclick="hideAllPopovers()">VALORANT</button>
 </div>
 <script>
+
+    $(`#csMenu`).click(mudarJogo(`cs`))
+    document.getElementById('lolMenu').addEventListener('click', mudarJogo(`lol`), false);
+    document.getElementById('valorantMenu').addEventListener('click', mudarJogo(`valorant`), false);
+    function mudarJogo(jogo) {
+        console.log(jogo)
+    }
+
     $("#changeGame").popover({
         sanitize: false,
         placement: 'right',
@@ -371,14 +382,12 @@
             return $('#changeGameOpto').html();
         }
     })
-    function hideAllPopovers() {
+    function hideAllPopovers(jogo) {
         $('#changeGame').each(function () {
             $(this).popover('hide');
         });
+        console.log(jogo)
     };
-
-
-
     function plusRotate(nomeContainer, plusId) {
         $(`.${nomeContainer}`).click((() => {
             if ($(`.${plusId}`).hasClass(`plussMenuRotate`)) {
@@ -389,6 +398,7 @@
             }
         }))
     }
+    
     plusRotate(`home`, `plussMenuHome`)
     plusRotate(`play`, `plussMenu`)
     plusRotate(`mission`, `plussMenuMission`)
