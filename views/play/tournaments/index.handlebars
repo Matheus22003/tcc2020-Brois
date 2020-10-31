@@ -268,10 +268,47 @@
 
                     <div class="col-12 mb-2" style="width: 100%;">
                         <a href="#" class="btn btn-secondary btn-rivals mx-auto " id="cadastro{{_id}}"
-                            style="width: 100%;">REGISTRAR EQUIPE</a>
+                            style="width: 100%;" data-toggle="modal" data-target="#modalRegistraerEquipe{{_id}}"> REGISTRAR EQUIPE</a>
+
+
+                        
+                           
                     </div>
                 </div>
             </div>
+
+            <div class="my-4 modal fade" id="modalRegistraerEquipe{{_id}}" aria-labelledby="modalAmigos" aria-hidden="true"
+                            tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div id="regPtUm" style="background-color: #1A1A1A;"
+                                    class="modal-content form-elegant bg-form">
+                                    <div class=" text-center">
+                                        {{!-- <a class="modal-title w-100 dark-grey-text font-weight-bold" id="myModalLabel" href="/"><img
+                            src="/images/logo-menu/pt-Logo1.png" class="logo-form mx-auto img-fluid"
+                            style="width: 10em;" alt=""></a> --}}
+                                        <p class="modal-title font-play position-absolute text-light mt-4 ml-3">Escolher Time:
+                                        </p>
+                                        <button type="button" class="close text-white mr-3 mt-3" data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body row">
+                                        {{#each equipesUsers}}
+                                        <div class="col-4 my-2">
+                                            <img src="data:image/png;base64,{{foto_time}}" class=" img-fluid" alt="...">
+                                            <div class="font-play">
+                                                {{tagTeam}}
+                                                <button class="btn btn-secondary btn-rivals mx-auto ">Cadastrar</button>
+                                            </div>
+                                        </div>
+                                        {{else}}
+                                        {{/each}}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
             {{else}}
             {{/each}}
         </div>
