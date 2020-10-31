@@ -27,7 +27,7 @@ router.route('/')
 
             }
         }
-        console.log(torDisponiveis);
+        // console.log(torDisponiveis);
 
         res.render('play/tournaments/index', { torneios: torDisponiveis });
     })

@@ -58,13 +58,16 @@
                                 <i class="fas fa-plus float-right mr-3 mt-1 plussMenu"></i> </a>
                         </div>
                         <ul class="collapse list-unstyled " style="width: 80%;" id="homePlay">
-                            <li class="d-flex justify-content-center mudarJogo">
+                            <li id="jogoEscolhido" class="d-flex justify-content-center mudarJogo">
                                 <div class="row ">
-                                    <div class="ml-2 col-10 mt-1 " style="line-height: 2.5vh;">
+                                    <div id="jogoMenuSelecionada" class="ml-2 col-10 mt-1 " style="line-height: 2.5vh;">
                                         <small class="text-light font-play">
                                             Jogo Selecionado:
                                         </small>
-                                        <h6 class="font-play font-weight-bold" style="font-size: 2vh;color: #fe6400;">
+                                        <br>
+                                        <input type="text" class="d-none" value="cs" id="jogoSelecionadoInput">
+                                        <h6 class="font-play font-weight-bold" id="nomeMenuJogo"
+                                            style="font-size: 2vh;color: #fe6400;">
                                             Counter-Strike: Global Offensive
                                         </h6>
                                     </div>
@@ -365,9 +368,6 @@
         onclick="hideAllPopovers(`valorant`)">VALORANT</button>
 </div>
 <script>
-    function mudarJogo(jogo) {
-        console.log(jogo)
-    }
 
     $("#changeGame").popover({
         sanitize: false,
@@ -378,11 +378,44 @@
             return $('#changeGameOpto').html();
         }
     })
+
     function hideAllPopovers(jogo) {
         $('#changeGame').each(function () {
             $(this).popover('hide');
         });
-        console.log(jogo)
+        if (jogo == `cs`) {
+            $(`#jogoEscolhido`).attr("style", 'background-image: url("../images/logo-menu/cs.png");');
+            $(`#nomeMenuJogo`).text(`Counter-Strike: Global Offensive`)
+            $(`#brValorant`).remove();
+            $(`#jogoMenuSelecionada`).removeClass(`mr-3`)
+            $(`#jogoMenuSelecionada`).removeClass(`mr-4`)
+            $(`#jogoMenuSelecionada`).addClass(`ml-2`)
+
+
+            $(`#jogoSelecionadoInput`).val(`cs`)
+        }
+        else if (jogo == `lol`) {
+            $(`#jogoEscolhido`).attr("style", 'background-image: url("../images/logo-menu/lol.png");');
+            $(`#nomeMenuJogo`).text(`League Of Legends`);
+            $(`#brValorant`).remove();
+            $(`#jogoMenuSelecionada`).removeClass(`ml-2`)
+            $(`#jogoMenuSelecionada`).removeClass(`mr-4`)
+            $(`#jogoMenuSelecionada`).addClass(`mr-3`)
+            $(`#jogoSelecionadoInput`).val(`lol`)
+
+        }
+        else if (jogo == `valorant`) {
+            $(`#jogoEscolhido`).attr("style", 'background-image: url("../images/logo-menu/valorant.png");');
+            $(`#nomeMenuJogo`).text(`Valorant`);
+            //$(`<br id="brValorant" >`).insertAfter(`#nomeMenuJogo`)
+            $(`#jogoMenuSelecionada`).removeClass(`ml-2`)
+            $(`#jogoMenuSelecionada`).removeClass(`mr-3`)
+            $(`#jogoMenuSelecionada`).addClass(`mr-4`)
+
+            $(`#jogoSelecionadoInput`).val(`valorant`)
+            //$(`#jogoMenuSelecionada`).removeClass(`ml-2`)
+            //$(`#jogoMenuSelecionada`).addClass(`ml-n4`)
+        }
     };
     function plusRotate(nomeContainer, plusId) {
         $(`.${nomeContainer}`).click((() => {
@@ -394,7 +427,7 @@
             }
         }))
     }
-    
+
     plusRotate(`home`, `plussMenuHome`)
     plusRotate(`play`, `plussMenu`)
     plusRotate(`mission`, `plussMenuMission`)
