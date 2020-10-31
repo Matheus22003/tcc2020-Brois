@@ -374,7 +374,7 @@
             <div class="card shadow-under">
                 <div class="card-header text-light font-play">
                     JOGADORES
-                    <a href="#" class="float-right" id="addParticipante" data-toggle="popover">
+                    <a href="#" class="float-right" id="addParticipante">
                         <i class="fas fa-user-plus float-right btn_add_player"></i></a>
                     {{!-- Adiconar Participante --}}
                     <div id="addIntegrantesPop" class="d-none">
@@ -506,7 +506,6 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
 <script src="/js/resize.js"></script>
 <script src="/js/verificarCampoErrado.js"></script>
 <script>
@@ -573,14 +572,7 @@
         $(`#${idNew}cont`).remove();
 
     }
-    /*$(function () {
-        $('#addParticipante').popover({
-            container: 'body',
-            placement: 'top',
-            html: true,
-            content: $(addIntegrantesPop).html()
-        })
-    })*/
+
     $("#addParticipante").popover({
         sanitize: false,
         placement: 'bottom',
@@ -698,7 +690,5 @@
 
 
     })
-
-
 
 </script>

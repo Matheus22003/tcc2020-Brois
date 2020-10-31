@@ -1,6 +1,23 @@
 <!-- Sidebar -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
+<style>
+    .mudarJogo {
+        background: url('../images/logo-menu/cs.png') no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .arrow::after {
+        border-left-color: #181818 !important;
+        border-right-color: #181818 !important;
+        border-top-color: #727374 !important;
+        border-bottom-color: #727374 !important;
+    }
+</style>
+
 <div class="" id="sidebar-wrapper">
     <!-- <div>
         <button type="button" id="btn-fechar" class="btn botaoMobile">
@@ -33,27 +50,40 @@
                 <li class="nav-item ">
                     <!-- <a href="#" class="list-group-item list-group-item-action hoverSideBar bg-transparent text-white">Overview</a> -->
                     <div>
-                        <div id="" class="play">
+                        <div id="" class="play ">
                             <a href="#homePlay" data-toggle="collapse" aria-expanded="false"
                                 class="list-group-item list-group-item-action hoverSideBar text-white menu-items"> <img
                                     src="/images/menu-icons/play-button.png" class="menu-icons img-fluid mb-1 mr-2"
                                     alt=""> Play
                                 <i class="fas fa-plus float-right mr-3 mt-1 plussMenu"></i> </a>
                         </div>
-                        <ul class="collapse list-unstyled" id="homePlay">
+                        <ul class="collapse list-unstyled " style="width: 80%;" id="homePlay">
+                            <li class="d-flex justify-content-center mudarJogo">
+                                <div class="row ">
+                                    <div class="ml-2 col-10 mt-1 " style="line-height: 2.5vh;">
+                                        <small class="text-light font-play">
+                                            Jogo Selecionado:
+                                        </small>
+                                        <h6 class="font-play font-weight-bold" style="font-size: 2vh;color: #fe6400;">
+                                            Counter-Strike: Global Offensive
+                                        </h6>
+                                    </div>
+                                    <div class="ml-n5 my-auto col-2">
+                                        <i id="changeGame" style="border-color: azure;"
+                                            class="fas fa-plus lvl p-1 pointer text-light"></i>
+                                    </div>
+                                </div>
+                            </li>
                             <li class="d-flex justify-content-center hoverMenu">
-                                
+
                                 <a href="/teams" class="my-3 text-light ">
-                                 Teams </a>
+                                    Teams </a>
                             </li>
                             <li class="d-flex justify-content-center hoverMenu">
-                                <a href="/tournament"
-                                    class="my-3 text-justify font-play text-light ">Tournaments</a>
+                                <a href="/tournament" class="my-3 text-justify font-play text-light ">Torneios</a>
                             </li>
                             <li class="d-flex justify-content-center hoverMenu">
-                                <a href="#"
-                                    class="mt-3 mb-2 text-justify font-play text-light">Home
-                                    3</a>
+                                <a href="#" class="my-3 text-justify font-play text-light">Meus Torneios</a>
                             </li>
                         </ul>
                     </div>
@@ -323,8 +353,32 @@
 </form>
 {{!-- Fim Login --}}
 {{/if}}
-
+<div class="d-none conteiner " id="changeGameOpto">
+    <button class="btn btn-block text-light border btn-secondary font-play"
+        style="border-color: #fe6400 !important;background-color:#181818;" onclick="hideAllPopovers()">CS:GO</button>
+    <button class="btn btn-block text-light border btn-secondary font-play"
+        style="border-color: #fe6400 !important;background-color:#181818;" onclick="hideAllPopovers()">LOL</button>
+    <button class="btn btn-block text-light border btn-secondary font-play"
+        style="border-color: #fe6400 !important;background-color:#181818;" onclick="hideAllPopovers()">VALORANT</button>
+</div>
 <script>
+    $("#changeGame").popover({
+        sanitize: false,
+        placement: 'right',
+        container: 'body',
+        html: true,
+        content: function () {
+            return $('#changeGameOpto').html();
+        }
+    })
+    function hideAllPopovers() {
+        $('#changeGame').each(function () {
+            $(this).popover('hide');
+        });
+    };
+
+
+
     function plusRotate(nomeContainer, plusId) {
         $(`.${nomeContainer}`).click((() => {
             if ($(`.${plusId}`).hasClass(`plussMenuRotate`)) {

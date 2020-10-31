@@ -192,7 +192,9 @@
   background-color: #181818 !important;
   color: #181818 !important;
   font-size: 100vh;
-  border-bottom: red !important;
+  /* border-bottom: red !important; */
+  
+
 }
 
 .botaoMobile {
