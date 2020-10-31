@@ -356,19 +356,15 @@
 <div class="d-none conteiner " id="changeGameOpto">
     <button class="btn btn-block text-light border btn-secondary font-play"
         style="border-color: #fe6400 !important;background-color:#181818;" id="csMenu"
-        onclick="hideAllPopovers()">CS:GO</button>
+        onclick="hideAllPopovers(`cs`)">CS:GO</button>
     <button class="btn btn-block text-light border btn-secondary font-play"
         style="border-color: #fe6400 !important;background-color:#181818;" id="lolMenu"
-        onclick="hideAllPopovers()">LOL</button>
+        onclick="hideAllPopovers(`lol`)">LOL</button>
     <button class="btn btn-block text-light border btn-secondary font-play"
         style="border-color: #fe6400 !important;background-color:#181818;" id="valorantMenu"
-        onclick="hideAllPopovers()">VALORANT</button>
+        onclick="hideAllPopovers(`valorant`)">VALORANT</button>
 </div>
 <script>
-
-    $(`#csMenu`).click(mudarJogo(`cs`))
-    document.getElementById('lolMenu').addEventListener('click', mudarJogo(`lol`), false);
-    document.getElementById('valorantMenu').addEventListener('click', mudarJogo(`valorant`), false);
     function mudarJogo(jogo) {
         console.log(jogo)
     }
